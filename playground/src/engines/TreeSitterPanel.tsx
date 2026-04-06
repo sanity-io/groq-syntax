@@ -102,18 +102,36 @@ function escapeHtml(text: string): string {
   return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
-function walk(node: Node, spans: string[]) {
-  if (node.childCount === 0) {
-    const text = node.text
-    if (!text) return
-    const color = getColor(node)
-    spans.push(`<span style="color:${color}">${escapeHtml(text)}</span>`)
-  } else {
-    for (let i = 0; i < node.childCount; i++) {
-      const child = node.child(i)
-      if (child) walk(child, spans)
+function renderTree(root: Node, source: string): string {
+  const spans: string[] = []
+  let pos = 0
+
+  function walk(node: Node) {
+    if (node.childCount === 0) {
+      // Emit any gap (whitespace/comments skipped by extras) before this node
+      if (node.startIndex > pos) {
+        spans.push(escapeHtml(source.slice(pos, node.startIndex)))
+      }
+      const text = node.text
+      if (text) {
+        const color = getColor(node)
+        spans.push(`<span style="color:${color}">${escapeHtml(text)}</span>`)
+      }
+      pos = node.endIndex
+    } else {
+      for (let i = 0; i < node.childCount; i++) {
+        const child = node.child(i)
+        if (child) walk(child)
+      }
     }
   }
+
+  walk(root)
+  // Emit any trailing text
+  if (pos < source.length) {
+    spans.push(escapeHtml(source.slice(pos)))
+  }
+  return spans.join('')
 }
 
 export function TreeSitterPanel({query}: {query: string}) {
@@ -130,9 +148,8 @@ export function TreeSitterPanel({query}: {query: string}) {
     getParser().then(({parser}) => {
       const tree = parser.parse(query)
       if (!tree) return
-      const spans: string[] = []
-      walk(tree.rootNode, spans)
-      el.innerHTML = `<pre style="font-family:'SF Mono',Menlo,Consolas,monospace;font-size:14px;line-height:1.5;margin:0;white-space:pre-wrap">${spans.join('')}</pre>`
+      const html = renderTree(tree.rootNode, query)
+      el.innerHTML = `<pre style="font-family:'SF Mono',Menlo,Consolas,monospace;font-size:14px;line-height:1.5;margin:0;white-space:pre-wrap">${html}</pre>`
       tree.delete()
     })
   }, [query, ready])
