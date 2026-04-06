@@ -23,7 +23,7 @@ export const groqHighlighting = styleTags({
   Pipe: t.controlOperator,
   Arrow: t.definitionOperator,
   Deref: t.derefOperator,
-  "Ellipsis InclusiveRange": t.punctuation,
+  "Ellipsis InclusiveRange": t.operator,
   '","  ":"': t.separator,
   '"(" ")"': t.paren,
   '"[" "]"': t.squareBracket,
