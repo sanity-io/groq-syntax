@@ -9,6 +9,12 @@ exports[`TextMate tokenizer > basics > tokenizes all basics fixtures > basics/fi
     "token": "wildcard",
   },
   {
+    "end": 2,
+    "start": 1,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 10,
     "start": 8,
     "text": "==",
@@ -31,6 +37,12 @@ exports[`TextMate tokenizer > basics > tokenizes all basics fixtures > basics/fi
     "start": 16,
     "text": """,
     "token": "string",
+  },
+  {
+    "end": 18,
+    "start": 17,
+    "text": "]",
+    "token": "punctuation.bracket",
   },
 ]
 `;
@@ -172,6 +184,453 @@ exports[`TextMate tokenizer > basics > tokenizes all basics fixtures > basics/li
 ]
 `;
 
+exports[`TextMate tokenizer > basics > tokenizes all basics fixtures > basics/projection.groq 1`] = `
+[
+  {
+    "end": 1,
+    "start": 0,
+    "text": "*",
+    "token": "wildcard",
+  },
+  {
+    "end": 2,
+    "start": 1,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 10,
+    "start": 8,
+    "text": "==",
+    "token": "operator",
+  },
+  {
+    "end": 12,
+    "start": 11,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 16,
+    "start": 12,
+    "text": "post",
+    "token": "string",
+  },
+  {
+    "end": 17,
+    "start": 16,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 18,
+    "start": 17,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 19,
+    "start": 18,
+    "text": "{",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 25,
+    "start": 24,
+    "text": ",",
+    "token": "punctuation.delimiter",
+  },
+  {
+    "end": 31,
+    "start": 30,
+    "text": ",",
+    "token": "punctuation.delimiter",
+  },
+  {
+    "end": 33,
+    "start": 32,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 39,
+    "start": 33,
+    "text": "author",
+    "token": "string",
+  },
+  {
+    "end": 40,
+    "start": 39,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 41,
+    "start": 40,
+    "text": ":",
+    "token": "punctuation.delimiter",
+  },
+  {
+    "end": 50,
+    "start": 48,
+    "text": "->",
+    "token": "accessor",
+  },
+  {
+    "end": 55,
+    "start": 54,
+    "text": "}",
+    "token": "punctuation.bracket",
+  },
+]
+`;
+
+exports[`TextMate tokenizer > basics > tokenizes all basics fixtures > basics/slice.groq 1`] = `
+[
+  {
+    "end": 1,
+    "start": 0,
+    "text": "*",
+    "token": "wildcard",
+  },
+  {
+    "end": 2,
+    "start": 1,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 10,
+    "start": 8,
+    "text": "==",
+    "token": "operator",
+  },
+  {
+    "end": 12,
+    "start": 11,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 16,
+    "start": 12,
+    "text": "post",
+    "token": "string",
+  },
+  {
+    "end": 17,
+    "start": 16,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 18,
+    "start": 17,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 19,
+    "start": 18,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 20,
+    "start": 19,
+    "text": "0",
+    "token": "number",
+  },
+  {
+    "end": 23,
+    "start": 20,
+    "text": "...",
+    "token": "operator.spread",
+  },
+  {
+    "end": 25,
+    "start": 23,
+    "text": "10",
+    "token": "number",
+  },
+  {
+    "end": 26,
+    "start": 25,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+]
+`;
+
+exports[`TextMate tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge-cases/nested-brackets.groq 1`] = `
+[
+  {
+    "end": 1,
+    "start": 0,
+    "text": "*",
+    "token": "wildcard",
+  },
+  {
+    "end": 2,
+    "start": 1,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 10,
+    "start": 8,
+    "text": "==",
+    "token": "operator",
+  },
+  {
+    "end": 12,
+    "start": 11,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 16,
+    "start": 12,
+    "text": "post",
+    "token": "string",
+  },
+  {
+    "end": 17,
+    "start": 16,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 20,
+    "start": 18,
+    "text": "&&",
+    "token": "operator",
+  },
+  {
+    "end": 32,
+    "start": 31,
+    "text": "(",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 33,
+    "start": 32,
+    "text": "*",
+    "token": "wildcard",
+  },
+  {
+    "end": 34,
+    "start": 33,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 42,
+    "start": 40,
+    "text": "==",
+    "token": "operator",
+  },
+  {
+    "end": 44,
+    "start": 43,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 50,
+    "start": 44,
+    "text": "author",
+    "token": "string",
+  },
+  {
+    "end": 51,
+    "start": 50,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 52,
+    "start": 51,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 53,
+    "start": 52,
+    "text": ".",
+    "token": "accessor",
+  },
+  {
+    "end": 57,
+    "start": 56,
+    "text": ")",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 58,
+    "start": 57,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 60,
+    "start": 59,
+    "text": "*",
+    "token": "wildcard",
+  },
+  {
+    "end": 61,
+    "start": 60,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 69,
+    "start": 67,
+    "text": "==",
+    "token": "operator",
+  },
+  {
+    "end": 71,
+    "start": 70,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 79,
+    "start": 71,
+    "text": "category",
+    "token": "string",
+  },
+  {
+    "end": 80,
+    "start": 79,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 81,
+    "start": 80,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 82,
+    "start": 81,
+    "text": "{",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 87,
+    "start": 86,
+    "text": ",",
+    "token": "punctuation.delimiter",
+  },
+  {
+    "end": 89,
+    "start": 88,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 97,
+    "start": 89,
+    "text": "products",
+    "token": "string",
+  },
+  {
+    "end": 98,
+    "start": 97,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 99,
+    "start": 98,
+    "text": ":",
+    "token": "punctuation.delimiter",
+  },
+  {
+    "end": 101,
+    "start": 100,
+    "text": "*",
+    "token": "wildcard",
+  },
+  {
+    "end": 102,
+    "start": 101,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 110,
+    "start": 108,
+    "text": "==",
+    "token": "operator",
+  },
+  {
+    "end": 112,
+    "start": 111,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 119,
+    "start": 112,
+    "text": "product",
+    "token": "string",
+  },
+  {
+    "end": 120,
+    "start": 119,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 123,
+    "start": 121,
+    "text": "&&",
+    "token": "operator",
+  },
+  {
+    "end": 135,
+    "start": 134,
+    "text": "(",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 136,
+    "start": 135,
+    "text": "^",
+    "token": "variable.special",
+  },
+  {
+    "end": 137,
+    "start": 136,
+    "text": ".",
+    "token": "accessor",
+  },
+  {
+    "end": 141,
+    "start": 140,
+    "text": ")",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 142,
+    "start": 141,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 143,
+    "start": 142,
+    "text": "}",
+    "token": "punctuation.bracket",
+  },
+]
+`;
+
 exports[`TextMate tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge-cases/variables.groq 1`] = `
 [
   {
@@ -275,6 +734,12 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "wildcard",
   },
   {
+    "end": 2,
+    "start": 1,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 10,
     "start": 8,
     "text": "==",
@@ -287,10 +752,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "number",
   },
   {
+    "end": 15,
+    "start": 14,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 17,
     "start": 16,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 18,
+    "start": 17,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 26,
@@ -305,10 +782,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "number",
   },
   {
+    "end": 29,
+    "start": 28,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 31,
     "start": 30,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 32,
+    "start": 31,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 37,
@@ -323,10 +812,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "number",
   },
   {
+    "end": 41,
+    "start": 40,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 43,
     "start": 42,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 44,
+    "start": 43,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 49,
@@ -341,10 +842,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "number",
   },
   {
+    "end": 53,
+    "start": 52,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 55,
     "start": 54,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 56,
+    "start": 55,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 62,
@@ -359,10 +872,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "number",
   },
   {
+    "end": 66,
+    "start": 65,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 68,
     "start": 67,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 69,
+    "start": 68,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 75,
@@ -376,6 +901,12 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "text": "99",
     "token": "number",
   },
+  {
+    "end": 79,
+    "start": 78,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
 ]
 `;
 
@@ -388,10 +919,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "wildcard",
   },
   {
+    "end": 2,
+    "start": 1,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 10,
     "start": 8,
     "text": "in",
     "token": "operator.keyword",
+  },
+  {
+    "end": 12,
+    "start": 11,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 13,
@@ -412,6 +955,12 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "string",
   },
   {
+    "end": 19,
+    "start": 18,
+    "text": ",",
+    "token": "punctuation.delimiter",
+  },
+  {
     "end": 21,
     "start": 20,
     "text": """,
@@ -430,10 +979,28 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "string",
   },
   {
+    "end": 30,
+    "start": 29,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 31,
+    "start": 30,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 33,
     "start": 32,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 34,
+    "start": 33,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 45,
@@ -459,6 +1026,12 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "text": """,
     "token": "string",
   },
+  {
+    "end": 55,
+    "start": 54,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
 ]
 `;
 
@@ -471,10 +1044,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "wildcard",
   },
   {
+    "end": 2,
+    "start": 1,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 6,
     "start": 4,
     "text": "&&",
     "token": "operator",
+  },
+  {
+    "end": 9,
+    "start": 8,
+    "text": "]",
+    "token": "punctuation.bracket",
   },
   {
     "end": 11,
@@ -483,10 +1068,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "wildcard",
   },
   {
+    "end": 12,
+    "start": 11,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 16,
     "start": 14,
     "text": "||",
     "token": "operator",
+  },
+  {
+    "end": 19,
+    "start": 18,
+    "text": "]",
+    "token": "punctuation.bracket",
   },
   {
     "end": 21,
@@ -495,16 +1092,34 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "wildcard",
   },
   {
+    "end": 22,
+    "start": 21,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 23,
     "start": 22,
     "text": "!",
     "token": "operator",
+  },
+  {
+    "end": 33,
+    "start": 32,
+    "text": "]",
+    "token": "punctuation.bracket",
   },
 ]
 `;
 
 exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > operators/pair.groq 1`] = `
 [
+  {
+    "end": 7,
+    "start": 6,
+    "text": "(",
+    "token": "punctuation.bracket",
+  },
   {
     "end": 15,
     "start": 13,
@@ -554,6 +1169,12 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "string",
   },
   {
+    "end": 33,
+    "start": 32,
+    "text": ",",
+    "token": "punctuation.delimiter",
+  },
+  {
     "end": 35,
     "start": 34,
     "text": """,
@@ -571,6 +1192,12 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "text": """,
     "token": "string",
   },
+  {
+    "end": 42,
+    "start": 41,
+    "text": ")",
+    "token": "punctuation.bracket",
+  },
 ]
 `;
 
@@ -581,6 +1208,12 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "start": 0,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 2,
+    "start": 1,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 10,
@@ -607,6 +1240,18 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "string",
   },
   {
+    "end": 18,
+    "start": 17,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 19,
+    "start": 18,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 20,
     "start": 19,
     "text": "0",
@@ -625,10 +1270,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "number",
   },
   {
+    "end": 24,
+    "start": 23,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 26,
     "start": 25,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 27,
+    "start": 26,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 35,
@@ -655,6 +1312,18 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "string",
   },
   {
+    "end": 43,
+    "start": 42,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
+    "end": 44,
+    "start": 43,
+    "text": "[",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 45,
     "start": 44,
     "text": "0",
@@ -673,10 +1342,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "number",
   },
   {
+    "end": 51,
+    "start": 50,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 53,
     "start": 52,
     "text": "*",
     "token": "wildcard",
+  },
+  {
+    "end": 54,
+    "start": 53,
+    "text": "[",
+    "token": "punctuation.bracket",
   },
   {
     "end": 60,
@@ -702,16 +1383,34 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "text": "65",
     "token": "number",
   },
+  {
+    "end": 68,
+    "start": 67,
+    "text": "]",
+    "token": "punctuation.bracket",
+  },
 ]
 `;
 
 exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > operators/spread.groq 1`] = `
 [
   {
+    "end": 1,
+    "start": 0,
+    "text": "{",
+    "token": "punctuation.bracket",
+  },
+  {
     "end": 4,
     "start": 1,
     "text": "...",
     "token": "operator.spread",
+  },
+  {
+    "end": 5,
+    "start": 4,
+    "text": ",",
+    "token": "punctuation.delimiter",
   },
   {
     "end": 7,
@@ -732,10 +1431,22 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "token": "string",
   },
   {
+    "end": 14,
+    "start": 13,
+    "text": ":",
+    "token": "punctuation.delimiter",
+  },
+  {
     "end": 19,
     "start": 15,
     "text": "true",
     "token": "keyword",
+  },
+  {
+    "end": 20,
+    "start": 19,
+    "text": "}",
+    "token": "punctuation.bracket",
   },
 ]
 `;

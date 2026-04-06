@@ -19,7 +19,11 @@
         { "include": "#wildcard" },
         { "include": "#operator" },
         { "include": "#pipe" },
-        { "include": "#accessor" }
+        { "include": "#accessor" },
+        { "include": "#filter" },
+        { "include": "#projection" },
+        { "include": "#group" },
+        { "include": "#punctuation" }
       ]
     },
     "comment": {
@@ -105,6 +109,14 @@
           "name": "keyword.operator.comparison.groq"
         },
         {
+          "match": "=>",
+          "name": "keyword.operator.pair.groq"
+        },
+        {
+          "match": "->",
+          "name": "keyword.operator.dereference.groq"
+        },
+        {
           "match": "<|>",
           "name": "keyword.operator.comparison.groq"
         },
@@ -139,14 +151,6 @@
         {
           "match": "\\.\\.(?!\\.)",
           "name": "keyword.operator.range.groq"
-        },
-        {
-          "match": "=>",
-          "name": "keyword.operator.pair.groq"
-        },
-        {
-          "match": "->",
-          "name": "keyword.operator.dereference.groq"
         }
       ]
     },
@@ -157,6 +161,61 @@
     "accessor": {
       "match": "\\.(?!\\.)",
       "name": "punctuation.accessor.dot.groq"
+    },
+    "filter": {
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.bracket.square.begin.groq" }
+      },
+      "end": "\\]",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.bracket.square.end.groq" }
+      },
+      "patterns": [
+        { "include": "#expression" }
+      ]
+    },
+    "projection": {
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.bracket.curly.begin.groq" }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.bracket.curly.end.groq" }
+      },
+      "patterns": [
+        { "include": "#expression" }
+      ]
+    },
+    "group": {
+      "begin": "\\(",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.bracket.round.begin.groq" }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.bracket.round.end.groq" }
+      },
+      "patterns": [
+        { "include": "#expression" }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "match": ",",
+          "name": "punctuation.separator.comma.groq"
+        },
+        {
+          "match": ":(?!:)",
+          "name": "punctuation.separator.colon.groq"
+        },
+        {
+          "match": ";",
+          "name": "punctuation.separator.semicolon.groq"
+        }
+      ]
     }
   }
 }

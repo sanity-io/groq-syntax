@@ -1,0 +1,2 @@
+*[_type == "post" && references(*[_type == "author"]._id)]
+*[_type == "category"]{name, "products": *[_type == "product" && references(^._id)]}
