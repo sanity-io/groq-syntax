@@ -4,6 +4,7 @@ import {join, dirname} from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {tokenizeTextmate} from '../src/tokenize-textmate.js'
 import {tokenizeLezer} from '../src/tokenize-lezer.js'
+import {tokenizeTreeSitter} from '../src/tokenize-treesitter.js'
 import {compareTokens} from '../src/compare.js'
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'fixtures')
@@ -39,6 +40,65 @@ describe('Cross-engine comparison (TextMate vs Lezer)', () => {
           // Allow up to 5% mismatches. The only remaining boundary difference is
           // negative numbers (TextMate: "-1" as one number, Lezer: "-" + "1").
           const maxMismatches = Math.ceil(totalTmTokens * 0.05)
+          const mismatchDesc = result.mismatches
+            .map((m) => `${m.textA}(${m.tokenA}!=${m.tokenB})`)
+            .join(', ')
+
+          expect(
+            result.mismatches.length,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`,
+          ).toBeLessThanOrEqual(maxMismatches)
+        }
+      })
+    })
+  }
+})
+
+describe('Cross-engine comparison (TextMate vs Tree-sitter)', () => {
+  for (const category of categories) {
+    describe(category, () => {
+      it(`agrees on all ${category} fixtures within tolerance`, async () => {
+        const fixtures = await getFixtures(category)
+        for (const fixture of fixtures) {
+          const source = await loadFixture(fixture)
+          const tmTokens = await tokenizeTextmate(source)
+          const tsTokens = await tokenizeTreeSitter(source)
+
+          const result = compareTokens(fixture, tmTokens, tsTokens)
+          const totalTmTokens = tmTokens.length
+
+          // Allow up to 5% mismatches - boundary differences between engines
+          // (e.g., negative numbers, string splitting) are expected.
+          const maxMismatches = Math.ceil(totalTmTokens * 0.05)
+          const mismatchDesc = result.mismatches
+            .map((m) => `${m.textA}(${m.tokenA}!=${m.tokenB})`)
+            .join(', ')
+
+          expect(
+            result.mismatches.length,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`,
+          ).toBeLessThanOrEqual(maxMismatches)
+        }
+      })
+    })
+  }
+})
+
+describe('Cross-engine comparison (Lezer vs Tree-sitter)', () => {
+  for (const category of categories) {
+    describe(category, () => {
+      it(`agrees on all ${category} fixtures within tolerance`, async () => {
+        const fixtures = await getFixtures(category)
+        for (const fixture of fixtures) {
+          const source = await loadFixture(fixture)
+          const lezerTokens = tokenizeLezer(source)
+          const tsTokens = await tokenizeTreeSitter(source)
+
+          const result = compareTokens(fixture, lezerTokens, tsTokens)
+          const totalLezerTokens = lezerTokens.length
+
+          // Allow up to 5% mismatches
+          const maxMismatches = Math.ceil(totalLezerTokens * 0.05)
           const mismatchDesc = result.mismatches
             .map((m) => `${m.textA}(${m.tokenA}!=${m.tokenB})`)
             .join(', ')

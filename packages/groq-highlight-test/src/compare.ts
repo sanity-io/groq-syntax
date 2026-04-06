@@ -9,6 +9,9 @@ const compatibleSets: CanonicalToken[][] = [
   ['identifier', 'identifier.function'],
   // TextMate can't distinguish wildcard `*` from multiplication `*` in all contexts
   ['wildcard', 'operator'],
+  // TextMate matches keywords like `in`, `match`, `asc`, `desc` regardless of context,
+  // while tree-sitter/Lezer can distinguish identifier position from operator position
+  ['operator.keyword', 'identifier'],
 ]
 
 /** Token types that should be merged when adjacent and contiguous. */
