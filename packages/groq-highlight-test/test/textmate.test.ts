@@ -22,4 +22,10 @@ describe('TextMate tokenizer', () => {
     const tokens = await tokenizeTextmate(source)
     expect(tokens).toMatchSnapshot()
   })
+
+  it('tokenizes variables and wildcard', async () => {
+    const source = await loadFixture('edge-cases/variables.groq')
+    const tokens = await tokenizeTextmate(source)
+    expect(tokens).toMatchSnapshot()
+  })
 })

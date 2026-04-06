@@ -3,6 +3,12 @@
 exports[`TextMate tokenizer > tokenizes basic filter 1`] = `
 [
   {
+    "end": 1,
+    "start": 0,
+    "text": "*",
+    "token": "wildcard",
+  },
+  {
     "end": 12,
     "start": 11,
     "text": """,
@@ -156,6 +162,47 @@ exports[`TextMate tokenizer > tokenizes literals 1`] = `
     "start": 102,
     "text": "// this is a comment",
     "token": "comment",
+  },
+]
+`;
+
+exports[`TextMate tokenizer > tokenizes variables and wildcard 1`] = `
+[
+  {
+    "end": 5,
+    "start": 0,
+    "text": "$type",
+    "token": "variable",
+  },
+  {
+    "end": 13,
+    "start": 6,
+    "text": "$userId",
+    "token": "variable",
+  },
+  {
+    "end": 15,
+    "start": 14,
+    "text": "@",
+    "token": "variable.special",
+  },
+  {
+    "end": 17,
+    "start": 16,
+    "text": "^",
+    "token": "variable.special",
+  },
+  {
+    "end": 20,
+    "start": 18,
+    "text": "^^",
+    "token": "variable.special",
+  },
+  {
+    "end": 22,
+    "start": 21,
+    "text": "*",
+    "token": "wildcard",
   },
 ]
 `;

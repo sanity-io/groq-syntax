@@ -12,7 +12,10 @@
         { "include": "#string-double" },
         { "include": "#string-single" },
         { "include": "#number" },
-        { "include": "#keyword" }
+        { "include": "#keyword" },
+        { "include": "#variable" },
+        { "include": "#variable-special" },
+        { "include": "#wildcard" }
       ]
     },
     "comment": {
@@ -58,6 +61,18 @@
     "keyword": {
       "match": "\\b(?:true|false|null)\\b",
       "name": "keyword.constant.groq"
+    },
+    "variable": {
+      "match": "\\$[a-zA-Z_][a-zA-Z0-9_]*",
+      "name": "variable.parameter.groq"
+    },
+    "variable-special": {
+      "match": "@|\\^+",
+      "name": "variable.language.groq"
+    },
+    "wildcard": {
+      "match": "(?<![\\w)\\]\\}])\\*(?!\\*)",
+      "name": "variable.language.wildcard.groq"
     }
   }
 }
