@@ -2,29 +2,19 @@ import {useState} from 'react'
 import {ShikiPanel} from './engines/ShikiPanel'
 import {CodeMirrorPanel} from './engines/CodeMirrorPanel'
 import {FixturePicker} from './components/FixturePicker'
-import {findFixture, fixtureKey, type Fixture} from './fixtures'
+import {findFixture, fixtureKey, fixtures, type Fixture} from './fixtures'
 import './App.css'
 
-const defaultQuery = `*[_type == "post"] | order(publishedAt desc) [0...10] {
-  "title": coalesce(title.es, title.en)
-  slug,
-  "bodyText": pt::text(body),
-  "author": author->name,
-  "categories": categories[]-> {
-    title,
-    slug
-  }
-}`
+const DEFAULT_FIXTURE = 'real-world/default'
 
 function getInitialState(): {query: string; fixtureId: string} {
   const hash = location.hash.slice(1)
-  if (hash) {
-    const fixture = findFixture(decodeURIComponent(hash))
-    if (fixture) {
-      return {query: fixture.content, fixtureId: fixtureKey(fixture)}
-    }
+  const key = hash ? decodeURIComponent(hash) : DEFAULT_FIXTURE
+  const fixture = findFixture(key)
+  if (fixture) {
+    return {query: fixture.content, fixtureId: fixtureKey(fixture)}
   }
-  return {query: defaultQuery, fixtureId: ''}
+  return {query: fixtures[0]?.content ?? '', fixtureId: ''}
 }
 
 export function App() {

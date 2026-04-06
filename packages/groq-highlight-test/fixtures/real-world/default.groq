@@ -1,0 +1,10 @@
+*[_type == "post"] | order(publishedAt desc) [0...10] {
+  "title": coalesce(title.es, title.en),
+  slug,
+  "bodyText": pt::text(body),
+  "author": author->name,
+  "categories": categories[]-> {
+    title,
+    slug
+  }
+}
