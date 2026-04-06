@@ -13,7 +13,7 @@
     "@codemirror/view": "^6.0.0",
     "@codemirror/state": "^6.0.0",
     "@codemirror/language": "^6.0.0",
-    "@codemirror/theme-one-dark": "^6.0.0",
+    "@lezer/highlight": "^1.0.0",
     "@sanity/lezer-groq": "workspace:*"
   },
   "devDependencies": {
