@@ -37,6 +37,11 @@ const groq = {
     pattern: /::/,
     alias: 'operator',
   },
+  'namespaced-function': {
+    pattern: /(::)\s*[a-zA-Z_]\w*(?=\s*\()/,
+    lookbehind: true,
+    alias: 'function',
+  },
   variable: /\$[a-zA-Z_]\w*/,
   'special-variable': {
     pattern: /@|\^+/,
@@ -56,6 +61,7 @@ const groq = {
     pattern: /\./,
     alias: 'punctuation',
   },
+  identifier: /\b[a-zA-Z_]\w*\b/,
 }
 
 // Auto-register with Prism if available globally
