@@ -132,13 +132,13 @@ String { DoubleString | SingleString }
 
 @local tokens {
   doubleStringEnd[@name='"'] { '"' }
-  StringEscape { "\\" _ }
+  StringEscape { "\\" ("u{" $[0-9a-fA-F]+ "}" | "u" $[0-9a-fA-F] $[0-9a-fA-F] $[0-9a-fA-F] $[0-9a-fA-F] | _) }
   @else doubleStringContent
 }
 
 @local tokens {
   singleStringEnd[@name="'"] { "'" }
-  SingleStringEscape[@name=StringEscape] { "\\" _ }
+  SingleStringEscape[@name=StringEscape] { "\\" ("u{" $[0-9a-fA-F]+ "}" | "u" $[0-9a-fA-F] $[0-9a-fA-F] $[0-9a-fA-F] $[0-9a-fA-F] | _) }
   @else singleStringContent
 }
 
