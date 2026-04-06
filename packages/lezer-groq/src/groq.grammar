@@ -1,0 +1,202 @@
+@top Query { expression }
+
+@skip { whitespace | LineComment }
+
+@precedence {
+  exp @right,
+  mul @left,
+  add @left,
+  compare @left,
+  not @left,
+  and @left,
+  or @left,
+  arrow @right,
+  pipe @left
+}
+
+expression { assignExpression (!pipe Pipe assignExpression)* }
+
+assignExpression { orExpression (!arrow Arrow orExpression)* }
+
+orExpression { andExpression (!or Or andExpression)* }
+
+andExpression { notExpression (!and And notExpression)* }
+
+notExpression { Not notExpression | compareExpression }
+
+compareExpression {
+  addExpression |
+  addExpression EqualityOp addExpression |
+  addExpression CompareOp addExpression |
+  addExpression In addExpression |
+  addExpression Match addExpression
+}
+
+addExpression { mulExpression (!add AddOp mulExpression)* }
+
+mulExpression { expExpression (!mul MulOp expExpression)* }
+
+expExpression { postfixExpression (!exp Exp postfixExpression)* }
+
+postfixExpression { primaryExpression postfixOp* }
+
+postfixOp {
+  Filter |
+  Projection |
+  DotAccess |
+  Dereference |
+  DerefAccess |
+  Asc |
+  Desc
+}
+
+Filter { "[" filterContent "]" }
+
+filterContent {
+  expression rangeOp expression |
+  expression
+}
+
+rangeOp { InclusiveRange | Ellipsis }
+
+Projection { "{" projectionBody "}" }
+
+projectionBody { projectionEntry ("," projectionEntry)* ","? }
+
+projectionEntry {
+  Ellipsis |
+  PropertyPair |
+  expression
+}
+
+PropertyPair { String ":" expression | Identifier ":" expression }
+
+DotAccess { "." Identifier }
+
+Dereference { Deref }
+
+DerefAccess { Deref Identifier }
+
+primaryExpression {
+  Everything |
+  This |
+  Parent |
+  Parameter |
+  String |
+  Number |
+  kw<"true", True> |
+  kw<"false", False> |
+  kw<"null", Null> |
+  NamespacedCall |
+  FunctionCall |
+  Identifier |
+  ArrayLiteral |
+  ObjectLiteral |
+  ParenExpression
+}
+
+FunctionCall { Identifier !exp "(" commaSep<expression>? ")" }
+
+NamespacedCall { Identifier NamespaceSep Identifier "(" commaSep<expression>? ")" }
+
+ArrayLiteral { "[" commaSep<expression>? "]" }
+
+ObjectLiteral { "{" objectBody "}" }
+
+objectBody { objectEntry ("," objectEntry)* ","? }
+
+objectEntry {
+  Ellipsis |
+  String ":" expression |
+  Identifier ":" expression
+}
+
+ParenExpression { "(" expression ")" }
+
+commaSep<x> { x ("," x)* ","? }
+
+kw<term, name> { @specialize[@name={name}]<Identifier, term> }
+
+@tokens {
+  whitespace { @whitespace+ }
+
+  LineComment { "//" ![\n]* }
+
+  identifierChar { @asciiLetter | "_" }
+  Identifier { identifierChar (identifierChar | @digit)* }
+
+  NamespaceSep { "::" }
+
+  Parameter { "$" identifierChar (identifierChar | @digit)* }
+
+  hex { @digit | $[a-fA-F] }
+  escape { "\\" ($[\\/"'bfnrt] | "u" hex hex hex hex) }
+
+  String {
+    '"' (escape | ![\\\"\n])* '"' |
+    "'" (escape | ![\\\'\n])* "'"
+  }
+
+  digit { @digit }
+  Number {
+    digit+ ("." digit+)? ($[eE] $[+\-]? digit+)?
+  }
+
+  @precedence { Number, "." }
+
+  Everything { "*" }
+
+  This { "@" }
+
+  Parent { "^" }
+
+  EqualityOp { "==" | "!=" }
+
+  CompareOp { "<=" | ">=" | "<" | ">" }
+
+  AddOp { "+" | "-" }
+
+  MulOp { "/" | "%" }
+
+  @precedence { LineComment, MulOp }
+
+  Exp { "**" }
+
+  @precedence { Exp, Everything }
+
+  And { "&&" }
+
+  Or { "||" }
+
+  Not { "!" }
+
+  @precedence { EqualityOp, Not }
+
+  Pipe { "|" }
+
+  @precedence { Or, Pipe }
+
+  Arrow { "=>" }
+
+  @precedence { Arrow, EqualityOp }
+
+  Deref { "->" }
+
+  Ellipsis { "..." }
+
+  InclusiveRange { ".." }
+
+  @precedence { Ellipsis, InclusiveRange, "." }
+  @precedence { NamespaceSep, ":" }
+
+  "(" ")" "[" "]" "{" "}" "," ":" "."
+}
+
+In { @specialize[@name=In]<Identifier, "in"> }
+Match { @specialize[@name=Match]<Identifier, "match"> }
+Asc { @specialize[@name=Asc]<Identifier, "asc"> }
+Desc { @specialize[@name=Desc]<Identifier, "desc"> }
+
+@external propSource groqHighlighting from "./highlight"
+
+@detectDelim
