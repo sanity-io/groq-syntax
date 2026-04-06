@@ -46,6 +46,8 @@ function getColor(node: Node): string {
     }
   } else {
     const text = node.text
+    // * inside everything node is the wildcard, not multiplication
+    if (text === '*' && node.parent?.type === 'everything') return colors.orange
     if (['in', 'match', 'asc', 'desc'].includes(text)) return colors.purple
     if (
       [
