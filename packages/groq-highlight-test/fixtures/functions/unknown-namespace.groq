@@ -1,0 +1,2 @@
+custom::doSomething(arg)
+myPlugin::transform(data)

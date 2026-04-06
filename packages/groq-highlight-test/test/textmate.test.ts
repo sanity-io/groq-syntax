@@ -16,7 +16,7 @@ async function getFixtures(category: string): Promise<string[]> {
   return entries.filter((e) => e.endsWith('.groq')).sort().map((e) => `${category}/${e}`)
 }
 
-const categories = ['basics', 'operators', 'edge-cases']
+const categories = ['basics', 'operators', 'edge-cases', 'functions']
 
 describe('TextMate tokenizer', () => {
   for (const category of categories) {
