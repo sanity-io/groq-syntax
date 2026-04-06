@@ -1,0 +1,66 @@
+/**
+ * GROQ language definition for Prism.js.
+ *
+ * Usage with Prism:
+ *   import Prism from 'prismjs'
+ *   import '@sanity/prism-groq'
+ *   // or: import groq from '@sanity/prism-groq'
+ *   //     Prism.languages.groq = groq
+ *
+ * Usage without Prism (standalone grammar):
+ *   import groq from '@sanity/prism-groq'
+ *   // groq is a plain object with token definitions
+ */
+
+const groq = {
+  comment: {
+    pattern: /\/\/.*/,
+    greedy: true,
+  },
+  string: {
+    pattern: /(["'])(?:\\[\s\S]|(?!\1)[^\\])*\1/,
+    greedy: true,
+    inside: {
+      escape: /\\(?:[\\/"'bfnrt]|u[0-9a-fA-F]{4}|u\{[0-9a-fA-F]+\})/,
+    },
+  },
+  number: /(?<!\w)-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?(?!\w)/,
+  boolean: /\b(?:false|true)\b/,
+  null: /\bnull\b/,
+  'keyword-operator': /\b(?:asc|desc|in|match)\b/,
+  function: /\b(?:after|before|boost|coalesce|count|dateTime|defined|identity|length|lower|now|order|path|references|round|score|select|string|upper)\b(?=\s*\()/,
+  namespace: {
+    pattern: /\b[a-zA-Z_]\w*(?=\s*::)/,
+    alias: 'class-name',
+  },
+  'namespace-separator': {
+    pattern: /::/,
+    alias: 'operator',
+  },
+  variable: /\$[a-zA-Z_]\w*/,
+  'special-variable': {
+    pattern: /@|\^+/,
+    alias: 'variable',
+  },
+  wildcard: {
+    pattern: /\*(?=\s*[\[{|)\],}]|\s*$)/,
+    alias: 'variable',
+  },
+  spread: {
+    pattern: /\.\.\./,
+    alias: 'operator',
+  },
+  operator: /->|=>|[!=<>]=|&&|\|\||[!+\-*/%]|\*\*|\||\.\.(?!\.)/,
+  punctuation: /[[\]{}(),:;]/,
+  accessor: {
+    pattern: /\./,
+    alias: 'punctuation',
+  },
+}
+
+// Auto-register with Prism if available globally
+if (typeof Prism !== 'undefined') {
+  Prism.languages.groq = groq
+}
+
+export default groq

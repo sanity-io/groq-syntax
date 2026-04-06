@@ -1,0 +1,27 @@
+{
+  "name": "@sanity/prism-groq",
+  "version": "0.0.0",
+  "description": "GROQ language definition for Prism.js",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./groq.js"
+  },
+  "files": [
+    "groq.js"
+  ],
+  "keywords": [
+    "prism",
+    "prismjs",
+    "groq",
+    "syntax-highlighting"
+  ],
+  "peerDependencies": {
+    "prismjs": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "prismjs": {
+      "optional": true
+    }
+  }
+}
