@@ -1,3 +1,161 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`TextMate tokenizer > tokenizes basic filter 1`] = `[]`;
+exports[`TextMate tokenizer > tokenizes basic filter 1`] = `
+[
+  {
+    "end": 12,
+    "start": 11,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 16,
+    "start": 12,
+    "text": "post",
+    "token": "string",
+  },
+  {
+    "end": 17,
+    "start": 16,
+    "text": """,
+    "token": "string",
+  },
+]
+`;
+
+exports[`TextMate tokenizer > tokenizes literals 1`] = `
+[
+  {
+    "end": 4,
+    "start": 0,
+    "text": "true",
+    "token": "keyword",
+  },
+  {
+    "end": 10,
+    "start": 5,
+    "text": "false",
+    "token": "keyword",
+  },
+  {
+    "end": 15,
+    "start": 11,
+    "text": "null",
+    "token": "keyword",
+  },
+  {
+    "end": 18,
+    "start": 16,
+    "text": "42",
+    "token": "number",
+  },
+  {
+    "end": 23,
+    "start": 19,
+    "text": "3.14",
+    "token": "number",
+  },
+  {
+    "end": 28,
+    "start": 24,
+    "text": "1e10",
+    "token": "number",
+  },
+  {
+    "end": 35,
+    "start": 29,
+    "text": "2.5E-3",
+    "token": "number",
+  },
+  {
+    "end": 37,
+    "start": 36,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 48,
+    "start": 37,
+    "text": "hello world",
+    "token": "string",
+  },
+  {
+    "end": 49,
+    "start": 48,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 51,
+    "start": 50,
+    "text": "'",
+    "token": "string",
+  },
+  {
+    "end": 64,
+    "start": 51,
+    "text": "single quoted",
+    "token": "string",
+  },
+  {
+    "end": 65,
+    "start": 64,
+    "text": "'",
+    "token": "string",
+  },
+  {
+    "end": 67,
+    "start": 66,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 75,
+    "start": 67,
+    "text": "escape: ",
+    "token": "string",
+  },
+  {
+    "end": 77,
+    "start": 75,
+    "text": "\\n",
+    "token": "string.escape",
+  },
+  {
+    "end": 80,
+    "start": 78,
+    "text": "\\t",
+    "token": "string.escape",
+  },
+  {
+    "end": 83,
+    "start": 81,
+    "text": "\\\\",
+    "token": "string.escape",
+  },
+  {
+    "end": 90,
+    "start": 84,
+    "text": "\\u0041",
+    "token": "string.escape",
+  },
+  {
+    "end": 100,
+    "start": 91,
+    "text": "\\u{1F600}",
+    "token": "string.escape",
+  },
+  {
+    "end": 101,
+    "start": 100,
+    "text": """,
+    "token": "string",
+  },
+  {
+    "end": 122,
+    "start": 102,
+    "text": "// this is a comment",
+    "token": "comment",
+  },
+]
+`;

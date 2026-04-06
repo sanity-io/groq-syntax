@@ -16,4 +16,10 @@ describe('TextMate tokenizer', () => {
     const tokens = await tokenizeTextmate(source)
     expect(tokens).toMatchSnapshot()
   })
+
+  it('tokenizes literals', async () => {
+    const source = await loadFixture('basics/literals.groq')
+    const tokens = await tokenizeTextmate(source)
+    expect(tokens).toMatchSnapshot()
+  })
 })

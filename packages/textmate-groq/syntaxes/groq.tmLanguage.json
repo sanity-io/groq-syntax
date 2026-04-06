@@ -8,12 +8,56 @@
   "repository": {
     "expression": {
       "patterns": [
-        { "include": "#comment" }
+        { "include": "#comment" },
+        { "include": "#string-double" },
+        { "include": "#string-single" },
+        { "include": "#number" },
+        { "include": "#keyword" }
       ]
     },
     "comment": {
       "match": "//.*$",
       "name": "comment.line.double-slash.groq"
+    },
+    "string-double": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.groq" }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.groq" }
+      },
+      "name": "string.quoted.double.groq",
+      "patterns": [
+        { "include": "#string-escape" }
+      ]
+    },
+    "string-single": {
+      "begin": "'",
+      "beginCaptures": {
+        "0": { "name": "punctuation.definition.string.begin.groq" }
+      },
+      "end": "'",
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.string.end.groq" }
+      },
+      "name": "string.quoted.single.groq",
+      "patterns": [
+        { "include": "#string-escape" }
+      ]
+    },
+    "string-escape": {
+      "match": "\\\\(?:[\"\\\\'/bfnrt]|u[0-9a-fA-F]{4}|u\\{[0-9a-fA-F]+\\})",
+      "name": "constant.character.escape.groq"
+    },
+    "number": {
+      "match": "(?<![\\w])-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?(?![\\w])",
+      "name": "constant.numeric.groq"
+    },
+    "keyword": {
+      "match": "\\b(?:true|false|null)\\b",
+      "name": "keyword.constant.groq"
     }
   }
 }

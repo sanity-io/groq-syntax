@@ -2,11 +2,13 @@ import type {CanonicalToken} from './canonical.js'
 
 /**
  * Maps a TextMate scope stack to a canonical token type.
- * Scopes are ordered most-specific-first by vscode-textmate.
+ * Scopes from vscode-textmate are ordered least-specific-first (root -> leaf),
+ * so we iterate in reverse to check the most specific scope first.
  * Returns undefined for scopes we don't map (e.g. source.groq itself).
  */
 export function mapTextmateScope(scopes: string[]): CanonicalToken | undefined {
-  for (const scope of scopes) {
+  for (let i = scopes.length - 1; i >= 0; i--) {
+    const scope = scopes[i];
     if (scope.startsWith('comment.')) return 'comment'
     if (scope.startsWith('constant.character.escape.')) return 'string.escape'
     if (scope.startsWith('string.')) return 'string'
