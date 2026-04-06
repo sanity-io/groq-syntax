@@ -1,0 +1,1 @@
+*[_type == "post"]{..., "related": *[_type == "post" && references(^._id)]}

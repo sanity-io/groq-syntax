@@ -1,0 +1,11 @@
+{
+  "posts": *[_type == "post"] | order(publishedAt desc) [0...5] {
+    title,
+    "author": author->name
+  },
+  "authors": *[_type == "author"] {
+    name,
+    "postCount": count(*[_type == "post" && references(^._id)])
+  },
+  "tags": array::unique(*[_type == "post"].tags[])
+}

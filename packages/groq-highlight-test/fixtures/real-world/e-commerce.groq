@@ -1,0 +1,23 @@
+*[_type == "product" && defined(price) && count(variants) > 0] {
+  title,
+  "slug": slug.current,
+  price,
+  "salePrice": select(
+    onSale == true => round(price * 0.8, 2),
+    price
+  ),
+  "inStock": count(variants[stock > 0]) > 0,
+  "categories": categories[]-> {
+    title,
+    "productCount": count(*[_type == "product" && references(^._id)])
+  },
+  "relatedProducts": *[
+    _type == "product" &&
+    _id != ^._id &&
+    count((categories[]._ref)[@ in ^.^.categories[]._ref]) > 0
+  ] [0...4] {
+    title,
+    price,
+    "thumbnail": images[0].asset->url
+  }
+}

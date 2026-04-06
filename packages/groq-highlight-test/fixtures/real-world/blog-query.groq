@@ -1,0 +1,14 @@
+*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc) [0...10] {
+  title,
+  slug,
+  publishedAt,
+  "excerpt": pt::text(body[0..1]),
+  "author": author-> {
+    name,
+    "avatar": image.asset->url
+  },
+  "categories": categories[]-> {
+    title,
+    slug
+  }
+}

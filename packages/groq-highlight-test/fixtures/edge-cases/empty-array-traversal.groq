@@ -1,0 +1,2 @@
+items[]
+*[_type == "post"].tags[]

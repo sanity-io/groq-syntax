@@ -1,0 +1,1 @@
+*[_type == "post"]{match, in, desc, asc, true, false, null, order, score}

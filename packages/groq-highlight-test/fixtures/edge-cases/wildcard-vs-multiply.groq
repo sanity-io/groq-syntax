@@ -1,0 +1,5 @@
+*
+*[_type == "post"]
+count * 2
+2 * 3
+*[count * price > 100]

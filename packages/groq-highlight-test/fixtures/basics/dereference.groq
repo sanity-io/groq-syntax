@@ -1,0 +1,3 @@
+*[_type == "post"]{"author": author->name}
+author->
+author->name->title

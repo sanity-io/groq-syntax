@@ -1,0 +1,1 @@
+*[_type == "post"] | score(boost(title match $q, 3), body match $q)
