@@ -101,7 +101,7 @@ primaryExpression {
   ParenExpression
 }
 
-FunctionCall { Identifier !exp "(" commaSep<expression>? ")" }
+FunctionCall { FunctionName { Identifier } !exp "(" commaSep<expression>? ")" }
 
 NamespacedCall { Namespace { Identifier } NamespaceSep FunctionName { Identifier } "(" commaSep<expression>? ")" }
 
