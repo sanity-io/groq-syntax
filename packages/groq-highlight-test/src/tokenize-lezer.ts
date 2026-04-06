@@ -5,9 +5,11 @@ import type {HighlightToken, CanonicalToken} from './canonical.js'
 /**
  * Direct node name -> canonical token mapping for named Lezer nodes.
  */
+const STRING_NODES = new Set(['DoubleString', 'SingleString'])
+
 const NODE_MAP: Record<string, CanonicalToken> = {
   LineComment: 'comment',
-  String: 'string',
+  StringEscape: 'string.escape',
   Number: 'number',
   True: 'keyword',
   False: 'keyword',
@@ -129,6 +131,38 @@ function getCanonicalToken(node: SyntaxNode): CanonicalToken | undefined {
 }
 
 /**
+ * Emit tokens for a string node (DoubleString/SingleString).
+ * Named children (StringEscape, closing quote) are emitted with their types.
+ * Gaps between named children are the invisible @else content - emitted as 'string'.
+ */
+function emitStringTokens(node: SyntaxNode, source: string, tokens: HighlightToken[]) {
+  let pos = node.from
+  for (let child = node.firstChild; child; child = child.nextSibling) {
+    // Emit gap before this child as string content
+    if (child.from > pos) {
+      const gapText = source.slice(pos, child.from)
+      if (gapText) {
+        tokens.push({text: gapText, token: 'string', start: pos, end: child.from})
+      }
+    }
+    // Emit the child
+    const childText = source.slice(child.from, child.to)
+    if (childText) {
+      const token = child.type.name === 'StringEscape' ? 'string.escape' as const : 'string' as const
+      tokens.push({text: childText, token, start: child.from, end: child.to})
+    }
+    pos = child.to
+  }
+  // Emit any trailing gap
+  if (pos < node.to) {
+    const gapText = source.slice(pos, node.to)
+    if (gapText) {
+      tokens.push({text: gapText, token: 'string', start: pos, end: node.to})
+    }
+  }
+}
+
+/**
  * Check whether a tree cursor is positioned at a leaf node (no children).
  * Uses firstChild() and immediately backs out with parent() to avoid
  * permanently changing cursor position.
@@ -151,9 +185,25 @@ export function tokenizeLezer(source: string): HighlightToken[] {
   const tokens: HighlightToken[] = []
   const cursor = tree.cursor()
 
+  // Track ranges we've already emitted tokens for (string nodes)
+  const emittedRanges: Array<[number, number]> = []
+
   do {
+    const name = cursor.node.type.name
+
+    // Handle string nodes specially - walk their children to emit content + escapes
+    if (STRING_NODES.has(name)) {
+      emitStringTokens(cursor.node, source, tokens)
+      emittedRanges.push([cursor.from, cursor.to])
+      // Let cursor.next() descend naturally; we'll skip children below
+      continue
+    }
+
     // Only process leaf nodes (those with no children)
     if (!isLeaf(cursor)) continue
+
+    // Skip leaves inside already-processed string nodes
+    if (emittedRanges.some(([from, to]) => cursor.from >= from && cursor.to <= to)) continue
 
     const text = source.slice(cursor.from, cursor.to)
 

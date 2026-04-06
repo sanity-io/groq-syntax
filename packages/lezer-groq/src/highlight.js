@@ -3,7 +3,8 @@ import {styleTags, tags as t} from "@lezer/highlight"
 export const groqHighlighting = styleTags({
   "True False": t.bool,
   Null: t.null,
-  String: t.string,
+  "String/...": t.string,
+  StringEscape: t.escape,
   Number: t.number,
   LineComment: t.lineComment,
   Identifier: t.variableName,

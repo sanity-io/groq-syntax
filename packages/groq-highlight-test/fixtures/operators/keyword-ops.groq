@@ -1,2 +1,4 @@
-*[_type in ["post", "article"]]
-*[title match "hello*"]
+[
+  *[_type in ["post", "article"]],
+  *[title match "hello*"]
+]

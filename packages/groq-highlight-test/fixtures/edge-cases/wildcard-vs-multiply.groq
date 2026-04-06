@@ -1,5 +1,7 @@
-*
-*[_type == "post"]
-count * 2
-2 * 3
-*[count * price > 100]
+{
+  "*": *,
+  "posts": *[_type == "post"],
+  "double": count * 2,
+  "six": 2 * 3,
+  "limited": *[price > count * price]
+}

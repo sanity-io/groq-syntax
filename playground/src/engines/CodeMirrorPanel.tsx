@@ -9,6 +9,7 @@ import {colors} from '../theme'
 const highlightStyle = HighlightStyle.define([
   {tag: t.lineComment, color: colors.gray, fontStyle: 'italic'},
   {tag: t.string, color: colors.green},
+  {tag: t.escape, color: colors.cyan},
   {tag: t.number, color: colors.orange},
   {tag: [t.bool, t.null, t.atom], color: colors.orange},
   {tag: t.function(t.variableName), color: colors.blue},

@@ -123,6 +123,25 @@ commaSep<x> { x ("," x)* ","? }
 
 kw<term, name> { @specialize[@name={name}]<Identifier, term> }
 
+@skip {} {
+  DoubleString { doubleQuote (doubleStringContent | StringEscape)* doubleStringEnd }
+  SingleString { singleQuote (singleStringContent | SingleStringEscape)* singleStringEnd }
+}
+
+String { DoubleString | SingleString }
+
+@local tokens {
+  doubleStringEnd[@name='"'] { '"' }
+  StringEscape { "\\" _ }
+  @else doubleStringContent
+}
+
+@local tokens {
+  singleStringEnd[@name="'"] { "'" }
+  SingleStringEscape[@name=StringEscape] { "\\" _ }
+  @else singleStringContent
+}
+
 @tokens {
   whitespace { @whitespace+ }
 
@@ -135,13 +154,8 @@ kw<term, name> { @specialize[@name={name}]<Identifier, term> }
 
   Parameter { "$" identifierChar (identifierChar | @digit)* }
 
-  hex { @digit | $[a-fA-F] }
-  escape { "\\" ($[\\/"'bfnrt] | "u" hex hex hex hex | "u{" hex+ "}") }
-
-  String {
-    '"' (escape | ![\\\"\n])* '"' |
-    "'" (escape | ![\\\'\n])* "'"
-  }
+  doubleQuote { '"' }
+  singleQuote { "'" }
 
   digit { @digit }
   Number {
