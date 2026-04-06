@@ -27,7 +27,8 @@ const highlightStyle = HighlightStyle.define([
 const baseTheme = EditorView.theme({
   '&': {backgroundColor: 'transparent'},
   '.cm-gutters': {display: 'none'},
-  '.cm-content': {caretColor: colors.blue, padding: '0'},
+  '.cm-content': {caretColor: colors.blue},
+  '.cm-line': {padding: '0'},
   '.cm-cursor': {borderLeftColor: colors.blue},
   '.cm-activeLine': {backgroundColor: 'transparent'},
   '&.cm-focused .cm-selectionBackground, .cm-selectionBackground': {
