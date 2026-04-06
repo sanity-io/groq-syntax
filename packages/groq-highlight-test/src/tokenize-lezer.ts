@@ -77,18 +77,24 @@ function classifyIdentifier(node: SyntaxNode): CanonicalToken {
   }
 
   if (parentName === 'NamespacedCall') {
-    // First child = namespace identifier
+    // Fallback for old grammar structure
     const firstChild = parent.firstChild
     if (firstChild && firstChild.from === node.from && firstChild.to === node.to) {
       return 'identifier.namespace'
     }
-    // Child immediately after NamespaceSep = function name
     const prev = node.prevSibling
     if (prev && prev.type.name === 'NamespaceSep') {
       return 'identifier.function'
     }
-    // Otherwise it's an argument
     return 'identifier'
+  }
+
+  // Identifier wrapped in Namespace or FunctionName nodes
+  if (parentName === 'Namespace') {
+    return 'identifier.namespace'
+  }
+  if (parentName === 'FunctionName') {
+    return 'identifier.function'
   }
 
   return 'identifier'

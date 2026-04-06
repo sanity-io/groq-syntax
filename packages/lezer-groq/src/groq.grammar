@@ -103,7 +103,7 @@ primaryExpression {
 
 FunctionCall { Identifier !exp "(" commaSep<expression>? ")" }
 
-NamespacedCall { Identifier NamespaceSep Identifier "(" commaSep<expression>? ")" }
+NamespacedCall { Namespace { Identifier } NamespaceSep FunctionName { Identifier } "(" commaSep<expression>? ")" }
 
 ArrayLiteral { "[" commaSep<expression>? "]" }
 
