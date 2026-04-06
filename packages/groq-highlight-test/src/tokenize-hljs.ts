@@ -57,8 +57,8 @@ export function tokenizeHljs(source: string): HighlightToken[] {
           canonical = 'punctuation.bracket'
         }
 
-        // Wildcard * vs operator *
-        if (scope === 'variable.language' && text === '*') {
+        // Wildcard * uses 'literal' scope
+        if (scope === 'literal' && text === '*') {
           canonical = 'wildcard'
         }
 

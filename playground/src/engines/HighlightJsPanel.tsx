@@ -47,7 +47,7 @@ const hljsStyles = `
 .hljs-output .hljs-title.function_.invoke__ { color: ${colors.blue}; }
 .hljs-output .hljs-title.class_ { color: ${colors.yellow}; }
 .hljs-output .hljs-variable { color: ${colors.red}; }
-.hljs-output .hljs-variable_language { color: ${colors.red}; }
+.hljs-output .hljs-variable.language_ { color: ${colors.red}; }
 .hljs-output .hljs-operator { color: ${colors.cyan}; }
 .hljs-output .hljs-punctuation { color: ${colors.fg}; }
 `

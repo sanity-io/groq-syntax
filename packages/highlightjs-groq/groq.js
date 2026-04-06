@@ -43,7 +43,7 @@ export default function groq(hljs) {
   }
 
   const WILDCARD = {
-    scope: 'variable.language',
+    scope: 'literal',
     match: /\*(?=\s*[\[{|)\],}]|\s*$)/,
   }
 
