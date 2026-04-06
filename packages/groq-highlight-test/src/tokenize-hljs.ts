@@ -101,6 +101,11 @@ export function tokenizeHljs(source: string): HighlightToken[] {
           canonical = 'variable.special'
         }
 
+        // Plain identifiers (not $param, not @, not ^) should be 'identifier'
+        if (canonical === 'variable' && /^[a-zA-Z_]\w*$/.test(text)) {
+          canonical = 'identifier'
+        }
+
         if (canonical) {
           tokens.push({text, token: canonical, start: offset, end: offset + text.length})
         }

@@ -116,6 +116,10 @@ export default function groq(hljs) {
       PIPE,
       OPERATOR,
       PUNCTUATION,
+      {
+        scope: 'variable',
+        match: /\b(?!true\b|false\b|null\b|in\b|match\b|asc\b|desc\b)[a-zA-Z_]\w*\b/,
+      },
     ],
   }
 }
