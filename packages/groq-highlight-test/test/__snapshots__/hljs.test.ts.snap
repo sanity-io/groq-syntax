@@ -2429,6 +2429,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
 exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures > functions/namespaced.groq 1`] = `
 [
   {
+    "end": 4,
+    "start": 0,
+    "text": "math",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 6,
     "start": 4,
     "text": "::",
@@ -2451,6 +2457,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "start": 16,
     "text": ")",
     "token": "punctuation.bracket",
+  },
+  {
+    "end": 22,
+    "start": 18,
+    "text": "math",
+    "token": "identifier.namespace",
   },
   {
     "end": 24,
@@ -2477,6 +2489,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "token": "punctuation.bracket",
   },
   {
+    "end": 40,
+    "start": 36,
+    "text": "math",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 42,
     "start": 40,
     "text": "::",
@@ -2501,6 +2519,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "token": "punctuation.bracket",
   },
   {
+    "end": 58,
+    "start": 54,
+    "text": "math",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 60,
     "start": 58,
     "text": "::",
@@ -2523,6 +2547,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "start": 70,
     "text": ")",
     "token": "punctuation.bracket",
+  },
+  {
+    "end": 78,
+    "start": 72,
+    "text": "string",
+    "token": "identifier.namespace",
   },
   {
     "end": 80,
@@ -2561,6 +2591,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "token": "punctuation.bracket",
   },
   {
+    "end": 103,
+    "start": 97,
+    "text": "string",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 105,
     "start": 103,
     "text": "::",
@@ -2595,6 +2631,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "start": 130,
     "text": ")",
     "token": "punctuation.bracket",
+  },
+  {
+    "end": 137,
+    "start": 132,
+    "text": "array",
+    "token": "identifier.namespace",
   },
   {
     "end": 139,
@@ -2633,6 +2675,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "token": "punctuation.bracket",
   },
   {
+    "end": 162,
+    "start": 157,
+    "text": "array",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 164,
     "start": 162,
     "text": "::",
@@ -2655,6 +2703,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "start": 176,
     "text": ")",
     "token": "punctuation.bracket",
+  },
+  {
+    "end": 183,
+    "start": 178,
+    "text": "array",
+    "token": "identifier.namespace",
   },
   {
     "end": 185,
@@ -2681,6 +2735,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "token": "punctuation.bracket",
   },
   {
+    "end": 199,
+    "start": 197,
+    "text": "pt",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 201,
     "start": 199,
     "text": "::",
@@ -2703,6 +2763,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "start": 210,
     "text": ")",
     "token": "punctuation.bracket",
+  },
+  {
+    "end": 215,
+    "start": 212,
+    "text": "geo",
+    "token": "identifier.namespace",
   },
   {
     "end": 217,
@@ -2741,6 +2807,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "token": "punctuation.bracket",
   },
   {
+    "end": 252,
+    "start": 244,
+    "text": "dateTime",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 254,
     "start": 252,
     "text": "::",
@@ -2759,6 +2831,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "token": "punctuation.bracket",
   },
   {
+    "end": 265,
+    "start": 260,
+    "text": "delta",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 267,
     "start": 265,
     "text": "::",
@@ -2775,6 +2853,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "start": 277,
     "text": ")",
     "token": "punctuation.bracket",
+  },
+  {
+    "end": 285,
+    "start": 279,
+    "text": "sanity",
+    "token": "identifier.namespace",
   },
   {
     "end": 287,
@@ -2800,6 +2884,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
 exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures > functions/unknown-namespace.groq 1`] = `
 [
   {
+    "end": 6,
+    "start": 0,
+    "text": "custom",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 8,
     "start": 6,
     "text": "::",
@@ -2822,6 +2912,12 @@ exports[`highlight.js tokenizer > functions > tokenizes all functions fixtures >
     "start": 23,
     "text": ")",
     "token": "punctuation.bracket",
+  },
+  {
+    "end": 33,
+    "start": 25,
+    "text": "myPlugin",
+    "token": "identifier.namespace",
   },
   {
     "end": 35,
@@ -4271,6 +4367,12 @@ exports[`highlight.js tokenizer > real-world > tokenizes all real-world fixtures
     "token": "punctuation.delimiter",
   },
   {
+    "end": 134,
+    "start": 132,
+    "text": "pt",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 136,
     "start": 134,
     "text": "::",
@@ -4864,6 +4966,12 @@ exports[`highlight.js tokenizer > real-world > tokenizes all real-world fixtures
     "token": "punctuation.delimiter",
   },
   {
+    "end": 241,
+    "start": 236,
+    "text": "array",
+    "token": "identifier.namespace",
+  },
+  {
     "end": 243,
     "start": 241,
     "text": "::",
@@ -5149,6 +5257,12 @@ exports[`highlight.js tokenizer > real-world > tokenizes all real-world fixtures
     "start": 117,
     "text": ":",
     "token": "punctuation.delimiter",
+  },
+  {
+    "end": 121,
+    "start": 119,
+    "text": "pt",
+    "token": "identifier.namespace",
   },
   {
     "end": 123,

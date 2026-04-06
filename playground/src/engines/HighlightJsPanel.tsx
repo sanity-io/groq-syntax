@@ -45,6 +45,7 @@ const hljsStyles = `
 .hljs-output .hljs-literal { color: ${colors.orange}; }
 .hljs-output .hljs-keyword { color: ${colors.purple}; }
 .hljs-output .hljs-title.function_.invoke__ { color: ${colors.blue}; }
+.hljs-output .hljs-title.class_ { color: ${colors.yellow}; }
 .hljs-output .hljs-variable { color: ${colors.red}; }
 .hljs-output .hljs-variable_language { color: ${colors.red}; }
 .hljs-output .hljs-operator { color: ${colors.cyan}; }

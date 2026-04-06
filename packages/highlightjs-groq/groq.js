@@ -13,7 +13,7 @@ export default function groq(hljs) {
     'after|before|boost|coalesce|count|dateTime|defined|identity|length|lower|now|order|path|references|round|score|select|string|upper'
 
   const NAMESPACED_CALL = {
-    scope: 'title.function.invoke',
+    scope: 'title.class',
     match: /\b[a-zA-Z_]\w*(?=\s*::)/,
   }
 
