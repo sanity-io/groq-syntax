@@ -38,8 +38,7 @@ const groq = {
     alias: 'operator',
   },
   'namespaced-function': {
-    pattern: /(::)\s*[a-zA-Z_]\w*(?=\s*\()/,
-    lookbehind: true,
+    pattern: /(?<=::)\s*[a-zA-Z_]\w*(?=\s*\()/,
     alias: 'function',
   },
   variable: /\$[a-zA-Z_]\w*/,
