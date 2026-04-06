@@ -5,9 +5,11 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": "./syntaxes/groq.tmLanguage.json"
+    ".": "./syntaxes/groq.tmLanguage.json",
+    "./injections/javascript": "./injections/javascript.tmLanguage.json"
   },
   "files": [
-    "syntaxes"
+    "syntaxes",
+    "injections"
   ]
 }
