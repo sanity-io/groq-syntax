@@ -3,6 +3,7 @@ import {ShikiPanel} from './engines/ShikiPanel'
 import {CodeMirrorPanel} from './engines/CodeMirrorPanel'
 import {TreeSitterPanel} from './engines/TreeSitterPanel'
 import {PrismPanel} from './engines/PrismPanel'
+import {HighlightJsPanel} from './engines/HighlightJsPanel'
 import {FixturePicker} from './components/FixturePicker'
 import {useFormattedQuery} from './useFormattedQuery'
 import {findFixture, fixtureKey, fixtures, type Fixture} from './fixtures'
@@ -75,6 +76,12 @@ export function App() {
           <h2>Prism (Refractor)</h2>
           <div className="panel-content">
             <PrismPanel query={formattedQuery} />
+          </div>
+        </div>
+        <div className="panel">
+          <h2>highlight.js (Lowlight)</h2>
+          <div className="panel-content">
+            <HighlightJsPanel query={formattedQuery} />
           </div>
         </div>
       </div>

@@ -10,6 +10,7 @@ Syntax highlighting grammars for [GROQ](https://www.sanity.io/docs/groq) (Graph-
 | [`@sanity/lezer-groq`](packages/lezer-groq/) | Lezer grammar (`.grammar`) | CodeMirror 6 |
 | [`tree-sitter-groq`](packages/tree-sitter-groq/) | Tree-sitter grammar (`grammar.js`) | Neovim, Zed, Emacs 29+ |
 | [`@sanity/prism-groq`](packages/prism-groq/) | Prism.js language definition | Documentation sites, MDX, markdown renderers |
+| [`@sanity/highlightjs-groq`](packages/highlightjs-groq/) | highlight.js language definition | Documentation sites, blogs, CMS platforms |
 
 ## Why a single repo?
 
