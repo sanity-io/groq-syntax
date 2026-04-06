@@ -1,2 +1,4 @@
-items[-1]
-*[_type == "post"] | order(publishedAt desc) [0]
+[
+  items[-1],
+  *[_type == "post"] | order(publishedAt desc) [0]
+]

@@ -3,6 +3,7 @@ import {ShikiPanel} from './engines/ShikiPanel'
 import {CodeMirrorPanel} from './engines/CodeMirrorPanel'
 import {TreeSitterPanel} from './engines/TreeSitterPanel'
 import {FixturePicker} from './components/FixturePicker'
+import {useFormattedQuery} from './useFormattedQuery'
 import {findFixture, fixtureKey, fixtures, type Fixture} from './fixtures'
 import './App.css'
 
@@ -22,6 +23,7 @@ export function App() {
   const [initial] = useState(getInitialState)
   const [query, setQuery] = useState(initial.query)
   const [selectedFixture, setSelectedFixture] = useState(initial.fixtureId)
+  const {formattedQuery, panelRef} = useFormattedQuery(query)
 
   function selectFixture(fixture: Fixture) {
     const key = fixtureKey(fixture)
@@ -52,20 +54,20 @@ export function App() {
       <div className="panels">
         <div className="panel">
           <h2>TextMate (Shiki)</h2>
-          <div className="panel-content">
-            <ShikiPanel query={query} />
+          <div className="panel-content" ref={panelRef}>
+            <ShikiPanel query={formattedQuery} />
           </div>
         </div>
         <div className="panel">
           <h2>Lezer (CodeMirror)</h2>
           <div className="panel-content">
-            <CodeMirrorPanel query={query} />
+            <CodeMirrorPanel query={formattedQuery} />
           </div>
         </div>
         <div className="panel">
           <h2>Tree-sitter (WASM)</h2>
           <div className="panel-content">
-            <TreeSitterPanel query={query} />
+            <TreeSitterPanel query={formattedQuery} />
           </div>
         </div>
       </div>
