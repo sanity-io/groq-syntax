@@ -4,6 +4,8 @@ export const groqHighlighting = styleTags({
   "True False": t.bool,
   Null: t.null,
   "String/...": t.string,
+  "DoubleString/...": t.string,
+  "SingleString/...": t.string,
   StringEscape: t.escape,
   Number: t.number,
   LineComment: t.lineComment,

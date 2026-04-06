@@ -1,3 +1,5 @@
-*[_type == "post"][0..5]
-*[_type == "post"][0...10]
-*[age in 18..65]
+{
+  "firstSixPosts": *[_type == "post"][0..5],
+  "firstTenPosts": *[_type == "post"][0...10],
+  "adults": *[age in 18..65]
+}
