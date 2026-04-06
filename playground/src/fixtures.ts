@@ -17,3 +17,11 @@ export const fixtures: Fixture[] = Object.entries(fixtureModules)
     return {name: filename, category, content: (content as string).trimEnd()}
   })
   .sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name))
+
+export function fixtureKey(f: Fixture): string {
+  return `${f.category}/${f.name}`
+}
+
+export function findFixture(key: string): Fixture | undefined {
+  return fixtures.find((f) => fixtureKey(f) === key)
+}

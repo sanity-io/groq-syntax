@@ -1,2 +1,4 @@
-*[_type == "post"] | order(publishedAt desc)
-*[_type == "post"] | order(_type asc, publishedAt desc)
+[
+  *[_type == "post"] | order(publishedAt desc),
+  *[_type == "post"] | order(_type asc, publishedAt desc)
+]

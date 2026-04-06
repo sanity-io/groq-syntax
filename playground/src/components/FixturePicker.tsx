@@ -1,15 +1,21 @@
-import {fixtures} from '../fixtures'
+import {fixtures, fixtureKey, type Fixture} from '../fixtures'
 
-export function FixturePicker({onSelect}: {onSelect: (content: string) => void}) {
+export function FixturePicker({
+  selected,
+  onSelect,
+}: {
+  selected: string
+  onSelect: (fixture: Fixture) => void
+}) {
   const categories = [...new Set(fixtures.map((f) => f.category))]
 
   return (
     <select
+      value={selected}
       onChange={(e) => {
-        const fixture = fixtures.find((f) => `${f.category}/${f.name}` === e.target.value)
-        if (fixture) onSelect(fixture.content)
+        const fixture = fixtures.find((f) => fixtureKey(f) === e.target.value)
+        if (fixture) onSelect(fixture)
       }}
-      defaultValue=""
     >
       <option value="" disabled>
         Load fixture...
@@ -18,11 +24,14 @@ export function FixturePicker({onSelect}: {onSelect: (content: string) => void})
         <optgroup key={cat} label={cat}>
           {fixtures
             .filter((f) => f.category === cat)
-            .map((f) => (
-              <option key={`${cat}/${f.name}`} value={`${cat}/${f.name}`}>
-                {f.name}
-              </option>
-            ))}
+            .map((f) => {
+              const key = fixtureKey(f)
+              return (
+                <option key={key} value={key}>
+                  {f.name}
+                </option>
+              )
+            })}
         </optgroup>
       ))}
     </select>
