@@ -1,5 +1,6 @@
 import {describe, it, expect} from 'vitest'
-import {createHighlighter} from 'shiki'
+import {createHighlighterCore} from 'shiki/core'
+import {createJavaScriptRegexEngine} from 'shiki/engine/javascript'
 import {readFile} from 'node:fs/promises'
 import {join, dirname} from 'node:path'
 import {fileURLToPath} from 'node:url'
@@ -15,9 +16,10 @@ describe('Shiki smoke test', () => {
   it('highlights GROQ with the textmate grammar', async () => {
     const grammar = await loadGrammar()
 
-    const highlighter = await createHighlighter({
-      themes: ['github-dark'],
+    const highlighter = await createHighlighterCore({
+      themes: [import('shiki/themes/github-dark.mjs')],
       langs: [{...grammar, name: 'groq'}],
+      engine: createJavaScriptRegexEngine(),
     })
 
     const html = highlighter.codeToHtml('*[_type == "post"]{title, "author": author->name}', {
@@ -40,9 +42,10 @@ describe('Shiki smoke test', () => {
     const fixturePath = join(__dirname, '..', 'fixtures', 'real-world', 'blog-query.groq')
     const query = await readFile(fixturePath, 'utf-8')
 
-    const highlighter = await createHighlighter({
-      themes: ['github-dark'],
+    const highlighter = await createHighlighterCore({
+      themes: [import('shiki/themes/github-dark.mjs')],
       langs: [{...grammar, name: 'groq'}],
+      engine: createJavaScriptRegexEngine(),
     })
 
     const html = highlighter.codeToHtml(query, {

@@ -1,16 +1,18 @@
 import {useEffect, useRef} from 'react'
-import {createHighlighter, type Highlighter} from 'shiki'
+import {createHighlighterCore, type HighlighterCore} from 'shiki/core'
+import {createJavaScriptRegexEngine} from 'shiki/engine/javascript'
 import {shikiTheme} from '../theme'
 
 import groqGrammar from '../../../packages/textmate-groq/syntaxes/groq.tmLanguage.json'
 
-let highlighterPromise: Promise<Highlighter> | undefined
+let highlighterPromise: Promise<HighlighterCore> | undefined
 
-function getHighlighter(): Promise<Highlighter> {
+function getHighlighter(): Promise<HighlighterCore> {
   if (!highlighterPromise) {
-    highlighterPromise = createHighlighter({
+    highlighterPromise = createHighlighterCore({
       themes: [shikiTheme],
       langs: [{...groqGrammar, name: 'groq'}],
+      engine: createJavaScriptRegexEngine(),
     })
   }
   return highlighterPromise
