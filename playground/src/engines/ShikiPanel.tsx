@@ -1,7 +1,7 @@
 import {useEffect, useRef} from 'react'
 import {createHighlighter, type Highlighter} from 'shiki'
+import {shikiTheme} from '../theme'
 
-// Load grammar - Vite handles JSON import
 import groqGrammar from '../../../packages/textmate-groq/syntaxes/groq.tmLanguage.json'
 
 let highlighterPromise: Promise<Highlighter> | undefined
@@ -9,8 +9,8 @@ let highlighterPromise: Promise<Highlighter> | undefined
 function getHighlighter(): Promise<Highlighter> {
   if (!highlighterPromise) {
     highlighterPromise = createHighlighter({
-      themes: ['one-dark-pro'],
-      langs: [{...groqGrammar, name: 'groq'} as Parameters<typeof createHighlighter>[0]['langs'][number]],
+      themes: [shikiTheme as any],
+      langs: [{...groqGrammar, name: 'groq'} as any],
     })
   }
   return highlighterPromise
@@ -25,7 +25,7 @@ export function ShikiPanel({query}: {query: string}) {
       if (cancelled || !ref.current) return
       ref.current.innerHTML = highlighter.codeToHtml(query, {
         lang: 'groq',
-        theme: 'one-dark-pro',
+        theme: 'groq-compare',
       })
     })
     return () => {

@@ -5,8 +5,9 @@ import {FixturePicker} from './components/FixturePicker'
 import './App.css'
 
 const defaultQuery = `*[_type == "post"] | order(publishedAt desc) [0...10] {
-  title,
+  "title": coalesce(title.es, title.en)
   slug,
+  "bodyText": pt::text(body),
   "author": author->name,
   "categories": categories[]-> {
     title,

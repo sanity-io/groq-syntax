@@ -15,7 +15,7 @@ export const groqHighlighting = styleTags({
   Namespace: t.namespace,
   NamespaceSep: t.punctuation,
   Parameter: t.special(t.variableName),
-  Everything: t.special(t.variableName),
+  Everything: t.atom,
   "This Parent": t.self,
   "CompareOp EqualityOp": t.compareOperator,
   "AddOp MulOp Exp": t.arithmeticOperator,
