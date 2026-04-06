@@ -1,0 +1,23 @@
+{
+  "name": "tree-sitter-groq",
+  "version": "0.0.0",
+  "description": "Tree-sitter grammar for GROQ query language",
+  "license": "MIT",
+  "keywords": ["tree-sitter", "groq", "parser", "syntax-highlighting"],
+  "files": [
+    "grammar.js",
+    "tree-sitter.json",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "build:wasm": "tree-sitter build --wasm",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.25.0"
+  }
+}
