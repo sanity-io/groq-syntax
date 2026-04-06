@@ -8,6 +8,9 @@
     "test:update": "vitest run --update"
   },
   "devDependencies": {
+    "@lezer/common": "^1.2.0",
+    "@lezer/highlight": "^1.0.0",
+    "@sanity/lezer-groq": "workspace:*",
     "shiki": "^4.0.0",
     "vscode-textmate": "^9.2.0",
     "vscode-oniguruma": "^2.0.1",
