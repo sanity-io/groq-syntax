@@ -1,0 +1,2 @@
+*[_type in ["post", "article"]]
+*[title match "hello*"]

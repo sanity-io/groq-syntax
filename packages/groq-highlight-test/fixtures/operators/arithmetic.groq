@@ -1,0 +1,6 @@
+price + tax
+price - discount
+count * 2
+total / items
+index % 2
+base ** exponent

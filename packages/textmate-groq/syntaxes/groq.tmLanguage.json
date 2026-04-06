@@ -15,7 +15,11 @@
         { "include": "#keyword" },
         { "include": "#variable" },
         { "include": "#variable-special" },
-        { "include": "#wildcard" }
+        { "include": "#operator-keyword" },
+        { "include": "#wildcard" },
+        { "include": "#operator" },
+        { "include": "#pipe" },
+        { "include": "#accessor" }
       ]
     },
     "comment": {
@@ -73,6 +77,86 @@
     "wildcard": {
       "match": "(?<![\\w)\\]\\}])\\*(?!\\*)",
       "name": "variable.language.wildcard.groq"
+    },
+    "operator-keyword": {
+      "patterns": [
+        {
+          "match": "\\bin\\b",
+          "name": "keyword.operator.logical.in.groq"
+        },
+        {
+          "match": "\\bmatch\\b",
+          "name": "keyword.operator.match.groq"
+        },
+        {
+          "match": "\\b(?:asc|desc)\\b",
+          "name": "keyword.operator.sort.groq"
+        }
+      ]
+    },
+    "operator": {
+      "patterns": [
+        {
+          "match": "==|!=",
+          "name": "keyword.operator.comparison.groq"
+        },
+        {
+          "match": "<=|>=",
+          "name": "keyword.operator.comparison.groq"
+        },
+        {
+          "match": "<|>",
+          "name": "keyword.operator.comparison.groq"
+        },
+        {
+          "match": "&&",
+          "name": "keyword.operator.logical.and.groq"
+        },
+        {
+          "match": "\\|\\|",
+          "name": "keyword.operator.logical.or.groq"
+        },
+        {
+          "match": "!",
+          "name": "keyword.operator.logical.not.groq"
+        },
+        {
+          "match": "\\*\\*",
+          "name": "keyword.operator.arithmetic.exponentiation.groq"
+        },
+        {
+          "match": "[+\\-/%]",
+          "name": "keyword.operator.arithmetic.groq"
+        },
+        {
+          "match": "(?<=[\\w)\\]\\}])\\*(?!\\*)",
+          "name": "keyword.operator.arithmetic.groq"
+        },
+        {
+          "match": "\\.\\.\\.",
+          "name": "keyword.operator.spread.groq"
+        },
+        {
+          "match": "\\.\\.(?!\\.)",
+          "name": "keyword.operator.range.groq"
+        },
+        {
+          "match": "=>",
+          "name": "keyword.operator.pair.groq"
+        },
+        {
+          "match": "->",
+          "name": "keyword.operator.dereference.groq"
+        }
+      ]
+    },
+    "pipe": {
+      "match": "\\|(?!\\|)",
+      "name": "keyword.operator.pipe.groq"
+    },
+    "accessor": {
+      "match": "\\.(?!\\.)",
+      "name": "punctuation.accessor.dot.groq"
     }
   }
 }
