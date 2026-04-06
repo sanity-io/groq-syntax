@@ -130,7 +130,7 @@ kw<term, name> { @specialize[@name={name}]<Identifier, term> }
   Parameter { "$" identifierChar (identifierChar | @digit)* }
 
   hex { @digit | $[a-fA-F] }
-  escape { "\\" ($[\\/"'bfnrt] | "u" hex hex hex hex) }
+  escape { "\\" ($[\\/"'bfnrt] | "u" hex hex hex hex | "u{" hex+ "}") }
 
   String {
     '"' (escape | ![\\\"\n])* '"' |

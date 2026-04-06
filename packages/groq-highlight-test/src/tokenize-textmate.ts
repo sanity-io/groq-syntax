@@ -65,17 +65,23 @@ export async function tokenizeTextmate(source: string): Promise<HighlightToken[]
 
     for (const token of result.tokens) {
       const text = line.substring(token.startIndex, token.endIndex)
-      if (/^\s*$/.test(text)) continue
+      if (!text) continue
 
       const canonicalToken = mapTextmateScope(token.scopes)
-      if (canonicalToken) {
-        tokens.push({
-          text,
-          token: canonicalToken,
-          start: offset + token.startIndex,
-          end: offset + token.endIndex,
-        })
+      if (!canonicalToken) continue
+
+      // Skip whitespace-only tokens unless they're inside a string
+      // (where whitespace is meaningful content)
+      if (/^\s+$/.test(text) && canonicalToken !== 'string' && canonicalToken !== 'string.escape') {
+        continue
       }
+
+      tokens.push({
+        text,
+        token: canonicalToken,
+        start: offset + token.startIndex,
+        end: offset + token.endIndex,
+      })
     }
 
     ruleStack = result.ruleStack

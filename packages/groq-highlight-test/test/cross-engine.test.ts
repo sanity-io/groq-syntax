@@ -36,9 +36,9 @@ describe('Cross-engine comparison (TextMate vs Lezer)', () => {
           const result = compareTokens(fixture, tmTokens, lezerTokens)
           const totalTmTokens = tmTokens.length
 
-          // Allow up to 15% mismatches as a soft threshold during early development.
-          // This will be tightened as the Lezer grammar improves.
-          const maxMismatches = Math.ceil(totalTmTokens * 0.15)
+          // Allow up to 5% mismatches. The only remaining boundary difference is
+          // negative numbers (TextMate: "-1" as one number, Lezer: "-" + "1").
+          const maxMismatches = Math.ceil(totalTmTokens * 0.05)
           const mismatchDesc = result.mismatches
             .map((m) => `${m.textA}(${m.tokenA}!=${m.tokenB})`)
             .join(', ')

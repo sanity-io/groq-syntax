@@ -7,7 +7,63 @@ import type {HighlightToken, CanonicalToken} from './canonical.js'
 const compatibleSets: CanonicalToken[][] = [
   ['operator.spread', 'operator.range'],
   ['identifier', 'identifier.function'],
+  // TextMate can't distinguish wildcard `*` from multiplication `*` in all contexts
+  ['wildcard', 'operator'],
 ]
+
+/** Token types that should be merged when adjacent and contiguous. */
+const MERGEABLE_TYPES: ReadonlySet<CanonicalToken> = new Set([
+  'string',
+  'string.escape',
+  'variable.special', // TextMate matches ^+ as one token, Lezer emits each ^ separately
+])
+
+/** The canonical type to use after merging tokens of a given type. */
+function mergedType(token: CanonicalToken): CanonicalToken {
+  if (token === 'string' || token === 'string.escape') return 'string'
+  return token
+}
+
+/**
+ * Merge adjacent tokens that belong to the same merge group into single spans.
+ * This normalizes boundary differences between engines:
+ * - TextMate splits strings into quote, content, and escape tokens; Lezer emits whole strings
+ * - TextMate matches ^+ as one token; Lezer emits each ^ separately
+ */
+export function mergeAdjacentTokens(tokens: HighlightToken[]): HighlightToken[] {
+  const result: HighlightToken[] = []
+  let i = 0
+
+  while (i < tokens.length) {
+    const token = tokens[i]
+    if (!MERGEABLE_TYPES.has(token.token)) {
+      result.push(token)
+      i++
+      continue
+    }
+
+    const targetType = mergedType(token.token)
+    let end = token.end
+    let text = token.text
+    let j = i + 1
+
+    while (j < tokens.length) {
+      const next = tokens[j]
+      if (MERGEABLE_TYPES.has(next.token) && mergedType(next.token) === targetType && next.start === end) {
+        end = next.end
+        text += next.text
+        j++
+      } else {
+        break
+      }
+    }
+
+    result.push({text, token: targetType, start: token.start, end})
+    i = j
+  }
+
+  return result
+}
 
 /**
  * Check whether two canonical token types are compatible.
@@ -35,14 +91,21 @@ export interface ComparisonResult {
 
 /**
  * Compare two token arrays by aligning on source positions.
+ * Before comparison, adjacent string-family tokens are merged so that
+ * engines with different string splitting strategies (e.g., TextMate splits
+ * quotes and escapes, Lezer emits whole strings) produce comparable spans.
+ *
  * Tokens at the same [start, end) range are compared for type equality/compatibility.
  * Tokens present in one but not the other are counted as missing.
  */
 export function compareTokens(
   fixture: string,
-  tokensA: HighlightToken[],
-  tokensB: HighlightToken[],
+  rawTokensA: HighlightToken[],
+  rawTokensB: HighlightToken[],
 ): ComparisonResult {
+  const tokensA = mergeAdjacentTokens(rawTokensA)
+  const tokensB = mergeAdjacentTokens(rawTokensB)
+
   const result: ComparisonResult = {
     fixture,
     matches: 0,
