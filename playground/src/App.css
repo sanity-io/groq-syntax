@@ -90,7 +90,11 @@
   line-height: 1.5 !important;
   background: transparent !important;
   white-space: pre-wrap !important;
-  word-wrap: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+
+.treesitter-output pre {
+  overflow-wrap: anywhere;
 }
 
 .codemirror-output .cm-editor {
