@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {ShikiPanel} from './engines/ShikiPanel'
 import {CodeMirrorPanel} from './engines/CodeMirrorPanel'
 import {TreeSitterPanel} from './engines/TreeSitterPanel'
+import {PrismPanel} from './engines/PrismPanel'
 import {FixturePicker} from './components/FixturePicker'
 import {useFormattedQuery} from './useFormattedQuery'
 import {findFixture, fixtureKey, fixtures, type Fixture} from './fixtures'
@@ -68,6 +69,12 @@ export function App() {
           <h2>Tree-sitter (WASM)</h2>
           <div className="panel-content">
             <TreeSitterPanel query={formattedQuery} />
+          </div>
+        </div>
+        <div className="panel">
+          <h2>Prism (Refractor)</h2>
+          <div className="panel-content">
+            <PrismPanel query={formattedQuery} />
           </div>
         </div>
       </div>
