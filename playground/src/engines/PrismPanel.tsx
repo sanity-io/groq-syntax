@@ -57,6 +57,8 @@ const prismStyles = `
 .prism-output .token.variable { color: ${colors.red}; }
 .prism-output .token.wildcard { color: ${colors.orange}; }
 .prism-output .token.spread { color: ${colors.cyan}; }
+.prism-output .token.dereference { color: ${colors.cyan}; }
+.prism-output .token.pipe { color: ${colors.cyan}; }
 .prism-output .token.operator { color: ${colors.cyan}; }
 .prism-output .token.punctuation { color: ${colors.fg}; }
 .prism-output .token.accessor { color: ${colors.cyan}; }

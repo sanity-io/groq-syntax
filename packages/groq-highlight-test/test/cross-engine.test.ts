@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url'
 import {tokenizeTextmate} from '../src/tokenize-textmate.js'
 import {tokenizeLezer} from '../src/tokenize-lezer.js'
 import {tokenizeTreeSitter} from '../src/tokenize-treesitter.js'
+import {tokenizePrism} from '../src/tokenize-prism.js'
 import {compareTokens} from '../src/compare.js'
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'fixtures')
@@ -99,6 +100,34 @@ describe('Cross-engine comparison (Lezer vs Tree-sitter)', () => {
 
           // Allow up to 5% mismatches
           const maxMismatches = Math.ceil(totalLezerTokens * 0.05)
+          const mismatchDesc = result.mismatches
+            .map((m) => `${m.textA}(${m.tokenA}!=${m.tokenB})`)
+            .join(', ')
+
+          expect(
+            result.mismatches.length,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`,
+          ).toBeLessThanOrEqual(maxMismatches)
+        }
+      })
+    })
+  }
+})
+
+describe('Cross-engine comparison (TextMate vs Prism)', () => {
+  for (const category of categories) {
+    describe(category, () => {
+      it(`agrees on all ${category} fixtures within tolerance`, async () => {
+        const fixtures = await getFixtures(category)
+        for (const fixture of fixtures) {
+          const source = await loadFixture(fixture)
+          const tmTokens = await tokenizeTextmate(source)
+          const prismTokens = tokenizePrism(source)
+
+          const result = compareTokens(fixture, tmTokens, prismTokens)
+          const totalTmTokens = tmTokens.length
+
+          const maxMismatches = Math.ceil(totalTmTokens * 0.05)
           const mismatchDesc = result.mismatches
             .map((m) => `${m.textA}(${m.tokenA}!=${m.tokenB})`)
             .join(', ')

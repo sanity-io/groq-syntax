@@ -55,7 +55,15 @@ const groq = {
     pattern: /\.\.\./,
     alias: 'operator',
   },
-  operator: /->|=>|[!=<>]=|&&|\|\||[!+\-*/%]|\*\*|\||\.\.(?!\.)/,
+  dereference: {
+    pattern: /->/,
+    alias: 'operator',
+  },
+  pipe: {
+    pattern: /\|(?!\|)/,
+    alias: 'operator',
+  },
+  operator: /=>|[!=<>]=|&&|\|\||[!+\-*/%]|\*\*|\.\.(?!\.)/,
   punctuation: /[[\]{}(),:;]/,
   accessor: {
     pattern: /\./,

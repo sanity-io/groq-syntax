@@ -26,6 +26,9 @@ importers:
       '@sanity/lezer-groq':
         specifier: workspace:*
         version: link:../lezer-groq
+      refractor:
+        specifier: ^5.0.0
+        version: 5.0.0
       shiki:
         specifier: ^4.0.0
         version: 4.0.2
