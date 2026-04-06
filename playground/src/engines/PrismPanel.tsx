@@ -4,12 +4,13 @@ import groqGrammar from '../../../packages/prism-groq/groq.js'
 import {colors} from '../theme'
 
 // Register GROQ with refractor via react-refractor's helper
-function groqSyntax(prism: {languages: Record<string, unknown>}) {
-  prism.languages.groq = groqGrammar
-}
-groqSyntax.displayName = 'groq'
-groqSyntax.aliases = [] as string[]
-registerLanguage(groqSyntax as Parameters<typeof registerLanguage>[0])
+const groqSyntax = Object.assign(
+  (prism: {languages: Record<string, unknown>}) => {
+    prism.languages.groq = groqGrammar
+  },
+  {displayName: 'groq', aliases: [] as string[]},
+)
+registerLanguage(groqSyntax)
 
 export function PrismPanel({query}: {query: string}) {
   const element = useMemo(
