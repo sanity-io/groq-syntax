@@ -24,12 +24,12 @@ export default function groq(hljs) {
 
   const FUNCTION_CALL = {
     scope: 'title.function.invoke',
-    begin: new RegExp(`\\b(?:${KNOWN_FUNCTIONS})\\b(?=\\s*\\()`),
+    match: new RegExp(`\\b(?:${KNOWN_FUNCTIONS})\\b(?=\\s*\\()`),
   }
 
   const NAMESPACED_FUNCTION = {
     scope: 'title.function.invoke',
-    match: /(?<=::)\s*[a-zA-Z_]\w*(?=\s*\()/,
+    begin: /(?<=::)\s*[a-zA-Z_]\w*(?=\s*\()/,
   }
 
   const VARIABLE = {
