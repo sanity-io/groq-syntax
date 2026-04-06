@@ -1,5 +1,5 @@
 {
-  "name": "groq-syntax",
+  "name": "@sanity/groq-syntax",
   "private": true,
   "type": "module",
   "engines": {
@@ -8,6 +8,7 @@
   },
   "packageManager": "pnpm@10.28.2",
   "scripts": {
+    "dev": "cd playground && pnpm dev",
     "test": "vitest run",
     "test:watch": "vitest"
   },
