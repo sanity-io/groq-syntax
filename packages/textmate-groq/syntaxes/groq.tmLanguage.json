@@ -82,7 +82,7 @@
       "name": "variable.language.groq"
     },
     "wildcard": {
-      "match": "(?<![\\w)\\]\\}])\\*(?!\\*)",
+      "match": "\\*(?=\\s*[\\[{|)\\],}]|\\s*$)",
       "name": "variable.language.wildcard.groq"
     },
     "operator-keyword": {
@@ -144,7 +144,7 @@
           "name": "keyword.operator.arithmetic.groq"
         },
         {
-          "match": "(?<=[\\w)\\]\\}])\\*(?!\\*)",
+          "match": "\\*(?!\\*)",
           "name": "keyword.operator.arithmetic.groq"
         },
         {

@@ -2116,7 +2116,7 @@ exports[`TextMate tokenizer > edge-cases > tokenizes all edge-cases fixtures > e
     "end": 28,
     "start": 27,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 30,
@@ -2134,7 +2134,7 @@ exports[`TextMate tokenizer > edge-cases > tokenizes all edge-cases fixtures > e
     "end": 34,
     "start": 33,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 36,
@@ -2164,7 +2164,7 @@ exports[`TextMate tokenizer > edge-cases > tokenizes all edge-cases fixtures > e
     "end": 46,
     "start": 45,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 52,
@@ -3318,7 +3318,7 @@ exports[`TextMate tokenizer > operators > tokenizes all operators fixtures > ope
     "end": 36,
     "start": 35,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 38,
@@ -5964,7 +5964,7 @@ exports[`TextMate tokenizer > real-world > tokenizes all real-world fixtures > r
     "end": 165,
     "start": 164,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 169,
