@@ -1,2 +1,4 @@
-items[]
-*[_type == "post"].tags[]
+[
+  items[],
+  *[_type == "post"].tags[]
+]
