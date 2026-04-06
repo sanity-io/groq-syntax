@@ -1,11 +1,13 @@
-true
-false
-null
-42
-3.14
-1e10
-2.5E-3
-"hello world"
-'single quoted'
-"escape: \n \t \\ \u0041 \u{1F600}"
-// this is a comment
+[
+  true,
+  false,
+  null,
+  42,
+  3.14,
+  1e10,
+  2.5E-3,
+  "hello world",
+  'single quoted',
+  "escape: \n \t \\ \u0041 \u{1F600}"
+  // this is a comment
+]
