@@ -7,12 +7,16 @@ import type {IGrammar} from 'vscode-textmate'
 import type {HighlightToken} from './canonical.js'
 import {mapTextmateScope} from './map-textmate.js'
 
-let registry: Registry | undefined
-let grammar: IGrammar | undefined
+let initPromise: Promise<IGrammar> | undefined
 
 async function getGrammar(): Promise<IGrammar> {
-  if (grammar) return grammar
+  if (!initPromise) {
+    initPromise = initGrammar()
+  }
+  return initPromise
+}
 
+async function initGrammar(): Promise<IGrammar> {
   const onigWasmPath = join(
     dirname(fileURLToPath(import.meta.url)),
     '..',
@@ -35,15 +39,14 @@ async function getGrammar(): Promise<IGrammar> {
   const grammarContent = await readFile(grammarPath, 'utf-8')
   const rawGrammar = parseRawGrammar(grammarContent, grammarPath)
 
-  registry = new Registry({
+  const registry = new Registry({
     onigLib: Promise.resolve({createOnigScanner, createOnigString}),
     loadGrammar: async () => rawGrammar,
   })
 
   const loaded = await registry.loadGrammar('source.groq')
   if (!loaded) throw new Error('Failed to load GROQ grammar')
-  grammar = loaded
-  return grammar
+  return loaded
 }
 
 /**

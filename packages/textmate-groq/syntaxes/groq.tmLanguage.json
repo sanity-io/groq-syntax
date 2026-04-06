@@ -149,7 +149,7 @@
         },
         {
           "match": "\\.\\.\\.",
-          "name": "keyword.operator.spread.groq"
+          "name": "keyword.operator.ellipsis.groq"
         },
         {
           "match": "\\.\\.(?!\\.)",

@@ -17,6 +17,8 @@ export function mapTextmateScope(scopes: string[]): CanonicalToken | undefined {
     if (scope.startsWith('keyword.operator.sort.')) return 'operator.keyword'
     if (scope === 'keyword.operator.logical.in.groq') return 'operator.keyword'
     if (scope === 'keyword.operator.match.groq') return 'operator.keyword'
+    // ... is scoped as 'ellipsis' since TextMate can't distinguish spread from exclusive range
+    if (scope.startsWith('keyword.operator.ellipsis.')) return 'operator.spread'
     if (scope.startsWith('keyword.operator.spread.')) return 'operator.spread'
     if (scope.startsWith('keyword.operator.pair.')) return 'operator.arrow'
     if (scope.startsWith('keyword.operator.pipe.')) return 'operator.pipe'
