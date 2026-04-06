@@ -315,7 +315,7 @@ exports[`Lezer tokenizer > basics > tokenizes all basics fixtures > basics/order
     "end": 46,
     "start": 45,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 47,
@@ -1148,7 +1148,7 @@ exports[`Lezer tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 11,
     "start": 10,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 12,
@@ -1351,7 +1351,7 @@ exports[`Lezer tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 60,
     "start": 59,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 61,
@@ -1574,22 +1574,16 @@ exports[`Lezer tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "token": "variable.special",
   },
   {
-    "end": 19,
-    "start": 18,
-    "text": "^",
-    "token": "variable.special",
-  },
-  {
     "end": 20,
-    "start": 19,
-    "text": "^",
+    "start": 18,
+    "text": "^^",
     "token": "variable.special",
   },
   {
     "end": 22,
     "start": 21,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
 ]
 `;
@@ -1606,7 +1600,7 @@ exports[`Lezer tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 3,
     "start": 2,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 4,
@@ -1648,7 +1642,7 @@ exports[`Lezer tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 28,
     "start": 27,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 30,
@@ -1666,7 +1660,7 @@ exports[`Lezer tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 34,
     "start": 33,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 36,
@@ -1678,7 +1672,7 @@ exports[`Lezer tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 38,
     "start": 37,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 39,
@@ -1696,7 +1690,7 @@ exports[`Lezer tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 46,
     "start": 45,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 52,
@@ -2778,7 +2772,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 36,
     "start": 35,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 38,
@@ -2885,7 +2879,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 17,
     "start": 16,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 18,
@@ -2921,7 +2915,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 31,
     "start": 30,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 32,
@@ -2957,7 +2951,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 43,
     "start": 42,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 44,
@@ -2993,7 +2987,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 55,
     "start": 54,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 56,
@@ -3029,7 +3023,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 68,
     "start": 67,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 69,
@@ -3130,7 +3124,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 33,
     "start": 32,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 34,
@@ -3207,7 +3201,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 11,
     "start": 10,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 12,
@@ -3243,7 +3237,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 21,
     "start": 20,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 22,
@@ -3409,7 +3403,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 26,
     "start": 25,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 27,
@@ -3475,7 +3469,7 @@ exports[`Lezer tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 53,
     "start": 52,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 54,
@@ -5088,7 +5082,7 @@ exports[`Lezer tokenizer > real-world > tokenizes all real-world fixtures > real
     "end": 165,
     "start": 164,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 169,

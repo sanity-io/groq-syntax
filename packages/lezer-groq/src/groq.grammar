@@ -22,7 +22,9 @@ orExpression { andExpression (!or Or andExpression)* }
 
 andExpression { notExpression (!and And notExpression)* }
 
-notExpression { Not notExpression | compareExpression }
+notExpression { Not notExpression | UnaryExpression | compareExpression }
+
+UnaryExpression { AddOp postfixExpression }
 
 compareExpression {
   addExpression |
@@ -34,7 +36,7 @@ compareExpression {
 
 addExpression { mulExpression (!add AddOp mulExpression)* }
 
-mulExpression { expExpression (!mul MulOp expExpression)* }
+mulExpression { expExpression (!mul (MulOp | MulOp { "*" }) expExpression)* }
 
 expExpression { postfixExpression (!exp Exp postfixExpression)* }
 
@@ -78,7 +80,7 @@ Dereference { Deref }
 DerefAccess { Deref Identifier }
 
 primaryExpression {
-  Everything |
+  Everything { "*" } |
   This |
   Parent |
   Parameter |
@@ -87,6 +89,10 @@ primaryExpression {
   kw<"true", True> |
   kw<"false", False> |
   kw<"null", Null> |
+  In |
+  Match |
+  Asc |
+  Desc |
   NamespacedCall |
   FunctionCall |
   Identifier |
@@ -144,11 +150,9 @@ kw<term, name> { @specialize[@name={name}]<Identifier, term> }
 
   @precedence { Number, "." }
 
-  Everything { "*" }
-
   This { "@" }
 
-  Parent { "^" }
+  Parent { "^"+ }
 
   EqualityOp { "==" | "!=" }
 
@@ -162,7 +166,7 @@ kw<term, name> { @specialize[@name={name}]<Identifier, term> }
 
   Exp { "**" }
 
-  @precedence { Exp, Everything }
+  @precedence { Exp, "*" }
 
   And { "&&" }
 
