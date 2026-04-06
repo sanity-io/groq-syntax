@@ -29,17 +29,22 @@ const groq = {
   null: /\bnull\b/,
   'keyword-operator': /\b(?:asc|desc|in|match)\b/,
   function: /\b(?:after|before|boost|coalesce|count|dateTime|defined|identity|length|lower|now|order|path|references|round|score|select|string|upper)\b(?=\s*\()/,
-  namespace: {
-    pattern: /\b[a-zA-Z_]\w*(?=\s*::)/,
-    alias: 'class-name',
-  },
-  'namespace-separator': {
-    pattern: /::/,
-    alias: 'operator',
-  },
-  'namespaced-function': {
-    pattern: /(?<=::)\s*[a-zA-Z_]\w*(?=\s*\()/,
-    alias: 'function',
+  'namespaced-call': {
+    pattern: /\b[a-zA-Z_]\w*\s*::\s*[a-zA-Z_]\w*(?=\s*\()/,
+    inside: {
+      namespace: {
+        pattern: /^[a-zA-Z_]\w*/,
+        alias: 'class-name',
+      },
+      'namespace-separator': {
+        pattern: /::/,
+        alias: 'operator',
+      },
+      'namespaced-function': {
+        pattern: /[a-zA-Z_]\w*$/,
+        alias: 'function',
+      },
+    },
   },
   variable: /\$[a-zA-Z_]\w*/,
   'special-variable': {

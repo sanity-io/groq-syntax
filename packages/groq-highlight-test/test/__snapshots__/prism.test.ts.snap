@@ -2558,7 +2558,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 9,
     "start": 6,
     "text": "sum",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 10,
@@ -2594,7 +2594,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 27,
     "start": 24,
     "text": "avg",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 28,
@@ -2630,7 +2630,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 45,
     "start": 42,
     "text": "min",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 46,
@@ -2666,7 +2666,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 63,
     "start": 60,
     "text": "max",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 64,
@@ -2702,7 +2702,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 85,
     "start": 80,
     "text": "split",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 86,
@@ -2750,7 +2750,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 115,
     "start": 105,
     "text": "startsWith",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 116,
@@ -2798,7 +2798,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 143,
     "start": 139,
     "text": "join",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 144,
@@ -2846,7 +2846,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 171,
     "start": 164,
     "text": "compact",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 172,
@@ -2882,7 +2882,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 191,
     "start": 185,
     "text": "unique",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 192,
@@ -2918,7 +2918,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 205,
     "start": 201,
     "text": "text",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 206,
@@ -2954,7 +2954,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 225,
     "start": 217,
     "text": "distance",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 226,
@@ -2990,13 +2990,19 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 252,
     "start": 244,
     "text": "dateTime",
-    "token": "identifier.namespace",
+    "token": "identifier",
+  },
+  {
+    "end": 253,
+    "start": 252,
+    "text": ":",
+    "token": "punctuation.delimiter",
   },
   {
     "end": 254,
-    "start": 252,
-    "text": "::",
-    "token": "punctuation.namespace",
+    "start": 253,
+    "text": ":",
+    "token": "punctuation.delimiter",
   },
   {
     "end": 257,
@@ -3032,7 +3038,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 276,
     "start": 267,
     "text": "operation",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 277,
@@ -3062,7 +3068,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 296,
     "start": 287,
     "text": "projectId",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 297,
@@ -3097,7 +3103,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 19,
     "start": 8,
     "text": "doSomething",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 20,
@@ -3133,7 +3139,7 @@ exports[`Prism tokenizer > functions > tokenizes all functions fixtures > functi
     "end": 44,
     "start": 35,
     "text": "transform",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 45,
@@ -4640,7 +4646,7 @@ exports[`Prism tokenizer > real-world > tokenizes all real-world fixtures > real
     "end": 140,
     "start": 136,
     "text": "text",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 141,
@@ -5263,7 +5269,7 @@ exports[`Prism tokenizer > real-world > tokenizes all real-world fixtures > real
     "end": 249,
     "start": 243,
     "text": "unique",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 250,
@@ -5574,7 +5580,7 @@ exports[`Prism tokenizer > real-world > tokenizes all real-world fixtures > real
     "end": 127,
     "start": 123,
     "text": "text",
-    "token": "identifier",
+    "token": "identifier.function",
   },
   {
     "end": 128,
