@@ -9,8 +9,8 @@ let highlighterPromise: Promise<Highlighter> | undefined
 function getHighlighter(): Promise<Highlighter> {
   if (!highlighterPromise) {
     highlighterPromise = createHighlighter({
-      themes: [shikiTheme as any],
-      langs: [{...groqGrammar, name: 'groq'} as any],
+      themes: [shikiTheme],
+      langs: [{...groqGrammar, name: 'groq'}],
     })
   }
   return highlighterPromise

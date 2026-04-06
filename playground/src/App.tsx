@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {ShikiPanel} from './engines/ShikiPanel'
 import {CodeMirrorPanel} from './engines/CodeMirrorPanel'
+import {TreeSitterPanel} from './engines/TreeSitterPanel'
 import {FixturePicker} from './components/FixturePicker'
 import {findFixture, fixtureKey, fixtures, type Fixture} from './fixtures'
 import './App.css'
@@ -59,6 +60,12 @@ export function App() {
           <h2>Lezer (CodeMirror)</h2>
           <div className="panel-content">
             <CodeMirrorPanel query={query} />
+          </div>
+        </div>
+        <div className="panel">
+          <h2>Tree-sitter (WASM)</h2>
+          <div className="panel-content">
+            <TreeSitterPanel query={query} />
           </div>
         </div>
       </div>

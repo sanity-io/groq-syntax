@@ -14,7 +14,8 @@
     "@codemirror/state": "^6.0.0",
     "@codemirror/language": "^6.0.0",
     "@lezer/highlight": "^1.0.0",
-    "@sanity/lezer-groq": "workspace:*"
+    "@sanity/lezer-groq": "workspace:*",
+    "web-tree-sitter": "^0.25.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
