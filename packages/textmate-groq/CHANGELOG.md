@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/sanity-io/groq-syntax/compare/textmate-groq-v1.0.2...textmate-groq-v1.1.0) (2026-04-07)
+
+
+### Features
+
+* add markdown fenced code block injection grammar ([ab22992](https://github.com/sanity-io/groq-syntax/commit/ab22992caa36aee0948ed5c4b8f2b82d344bc0e5))
+
 ## [1.0.2](https://github.com/sanity-io/groq-syntax/compare/textmate-groq-v1.0.1...textmate-groq-v1.0.2) (2026-04-07)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/sanity-io/groq-syntax/compare/prism-groq-v1.1.1...prism-groq-v1.1.2) (2026-04-07)
+
+
+### Bug Fixes
+
+* Prism wildcard heuristic - restrict lookahead to [ { | ([b651a92](https://github.com/sanity-io/groq-syntax/commit/b651a92da55ae563f384c3e6354ced2c1e5fdee0))
+
 ## [1.1.1](https://github.com/sanity-io/groq-syntax/compare/prism-groq-v1.1.0...prism-groq-v1.1.1) (2026-04-07)
 
 
