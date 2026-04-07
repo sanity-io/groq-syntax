@@ -1,0 +1,9 @@
+dist/
+node_modules/
+pnpm-lock.yaml
+packages/lezer-groq/src/parser.js
+packages/lezer-groq/src/parser.terms.js
+packages/tree-sitter-groq/src/
+packages/tree-sitter-groq/*.wasm
+playground/public/*.wasm
+**/__snapshots__/
