@@ -7,6 +7,7 @@ import {tokenizeLezer} from '../src/tokenize-lezer.js'
 import {tokenizeTreeSitter} from '../src/tokenize-treesitter.js'
 import {tokenizePrism} from '../src/tokenize-prism.js'
 import {tokenizeHljs} from '../src/tokenize-hljs.js'
+import {tokenizeAce} from '../src/tokenize-ace.js'
 import {compareTokens} from '../src/compare.js'
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'fixtures')
@@ -154,6 +155,34 @@ describe('Cross-engine comparison (TextMate vs highlight.js)', () => {
           const hljsTokens = tokenizeHljs(source)
 
           const result = compareTokens(fixture, tmTokens, hljsTokens)
+          const totalTmTokens = tmTokens.length
+
+          const maxMismatches = Math.ceil(totalTmTokens * 0.05)
+          const mismatchDesc = result.mismatches
+            .map((m) => `${m.textA}(${m.tokenA}!=${m.tokenB})`)
+            .join(', ')
+
+          expect(
+            result.mismatches.length,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`
+          ).toBeLessThanOrEqual(maxMismatches)
+        }
+      })
+    })
+  }
+})
+
+describe('Cross-engine comparison (TextMate vs Ace)', () => {
+  for (const category of categories) {
+    describe(category, () => {
+      it(`agrees on all ${category} fixtures within tolerance`, async () => {
+        const fixtures = await getFixtures(category)
+        for (const fixture of fixtures) {
+          const source = await loadFixture(fixture)
+          const tmTokens = await tokenizeTextmate(source)
+          const aceTokens = tokenizeAce(source)
+
+          const result = compareTokens(fixture, tmTokens, aceTokens)
           const totalTmTokens = tmTokens.length
 
           const maxMismatches = Math.ceil(totalTmTokens * 0.05)

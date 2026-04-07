@@ -8,6 +8,7 @@
     "test:update": "vitest run --update"
   },
   "devDependencies": {
+    "ace-builds": "^1.39.0",
     "@lezer/common": "^1.2.0",
     "@lezer/highlight": "^1.0.0",
     "@sanity/lezer-groq": "workspace:*",

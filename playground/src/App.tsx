@@ -4,6 +4,7 @@ import {CodeMirrorPanel} from './engines/CodeMirrorPanel'
 import {TreeSitterPanel} from './engines/TreeSitterPanel'
 import {PrismPanel} from './engines/PrismPanel'
 import {HighlightJsPanel} from './engines/HighlightJsPanel'
+import {AcePanel} from './engines/AcePanel'
 import {FixturePicker} from './components/FixturePicker'
 import {useFormattedQuery} from './useFormattedQuery'
 import {findFixture, fixtureKey, fixtures, type Fixture} from './fixtures'
@@ -81,6 +82,12 @@ export function App() {
           <h2>highlight.js (Lowlight)</h2>
           <div className="panel-content">
             <HighlightJsPanel query={formattedQuery} />
+          </div>
+        </div>
+        <div className="panel">
+          <h2>Ace Editor</h2>
+          <div className="panel-content">
+            <AcePanel query={formattedQuery} />
           </div>
         </div>
       </div>

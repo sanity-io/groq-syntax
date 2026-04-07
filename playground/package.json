@@ -12,6 +12,7 @@
     "@codemirror/view": "^6.0.0",
     "@lezer/highlight": "^1.0.0",
     "@sanity-labs/prettier-plugin-groq": "^0.1.0",
+    "@sanity/ace-groq": "workspace:*",
     "@sanity/highlightjs-groq": "workspace:*",
     "@sanity/lezer-groq": "workspace:*",
     "@sanity/prism-groq": "workspace:*",
@@ -23,6 +24,7 @@
     "react-refractor": "^4.0.0",
     "refractor": "^5.0.0",
     "shiki": "^4.0.0",
+    "ace-builds": "^1.39.0",
     "web-tree-sitter": "^0.25.0"
   },
   "devDependencies": {

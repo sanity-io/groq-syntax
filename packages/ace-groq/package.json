@@ -1,0 +1,36 @@
+{
+  "name": "@sanity/ace-groq",
+  "version": "1.0.0",
+  "description": "GROQ language mode for the Ace editor",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanity-io/groq-syntax.git",
+    "directory": "packages/ace-groq"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./groq.js"
+  },
+  "files": [
+    "groq.js",
+    "groq.d.ts"
+  ],
+  "keywords": [
+    "ace",
+    "ace-editor",
+    "groq",
+    "syntax-highlighting"
+  ],
+  "peerDependencies": {
+    "ace-builds": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ace-builds": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

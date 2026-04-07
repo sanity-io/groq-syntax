@@ -30,6 +30,12 @@ importers:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@22.19.17)
 
+  packages/ace-groq:
+    dependencies:
+      ace-builds:
+        specifier: '>=1.0.0'
+        version: 1.43.6
+
   packages/groq-highlight-test:
     devDependencies:
       '@lezer/common':
@@ -47,6 +53,9 @@ importers:
       '@types/node':
         specifier: ^22.0.0
         version: 22.19.17
+      ace-builds:
+        specifier: ^1.39.0
+        version: 1.43.6
       lowlight:
         specifier: ^3.3.0
         version: 3.3.0
@@ -137,6 +146,9 @@ importers:
       '@sanity-labs/prettier-plugin-groq':
         specifier: ^0.1.0
         version: 0.1.0(prettier@3.8.1)
+      '@sanity/ace-groq':
+        specifier: workspace:*
+        version: link:../packages/ace-groq
       '@sanity/highlightjs-groq':
         specifier: workspace:*
         version: link:../packages/highlightjs-groq
@@ -146,6 +158,9 @@ importers:
       '@sanity/prism-groq':
         specifier: workspace:*
         version: link:../packages/prism-groq
+      ace-builds:
+        specifier: ^1.39.0
+        version: 1.43.6
       lowlight:
         specifier: ^3.3.0
         version: 3.3.0
@@ -920,6 +935,9 @@ packages:
 
   '@vitest/utils@3.2.4':
     resolution: {integrity: sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA==}
+
+  ace-builds@1.43.6:
+    resolution: {integrity: sha512-L1ddibQ7F3vyXR2k2fg+I8TQTPWVA6CKeDQr/h2+8CeyTp3W6EQL8xNFZRTztuP8xNOAqL3IYPqdzs31GCjDvg==}
 
   ansi-regex@6.2.2:
     resolution: {integrity: sha512-Bq3SmSpyFHaWjPk8If9yc6svM8c56dB5BAtW4Qbw5jHTwwXXcTLoRMkpDJp6VL0XzlWaCHTXrkFURMYmD0sLqg==}
@@ -2192,6 +2210,8 @@ snapshots:
       '@vitest/pretty-format': 3.2.4
       loupe: 3.2.1
       tinyrainbow: 2.0.0
+
+  ace-builds@1.43.6: {}
 
   ansi-regex@6.2.2: {}
 
