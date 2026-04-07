@@ -1,9 +1,14 @@
 {
   "name": "tree-sitter-groq",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Tree-sitter grammar for GROQ query language",
   "license": "MIT",
-  "keywords": ["tree-sitter", "groq", "parser", "syntax-highlighting"],
+  "keywords": [
+    "tree-sitter",
+    "groq",
+    "parser",
+    "syntax-highlighting"
+  ],
   "files": [
     "grammar.js",
     "tree-sitter.json",
