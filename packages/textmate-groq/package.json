@@ -1,6 +1,6 @@
 {
   "name": "@sanity/textmate-groq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TextMate grammar for GROQ query language",
   "license": "MIT",
   "type": "module",
