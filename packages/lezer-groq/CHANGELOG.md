@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/sanity-io/groq-syntax/compare/lezer-groq-v1.0.0...lezer-groq-v1.0.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* set publishConfig access to public for all packages ([ba11d06](https://github.com/sanity-io/groq-syntax/commit/ba11d06672e03996626b9330fcfe8592cb23a133))
+
 ## 1.0.0 (2026-04-07)
 
 ### Features

@@ -1,7 +1,7 @@
 {
-  "packages/textmate-groq": "1.0.0",
-  "packages/lezer-groq": "1.0.0",
-  "packages/tree-sitter-groq": "1.0.0",
-  "packages/prism-groq": "1.0.0",
-  "packages/highlightjs-groq": "1.0.0"
+  "packages/textmate-groq": "1.0.1",
+  "packages/lezer-groq": "1.0.1",
+  "packages/tree-sitter-groq": "1.1.0",
+  "packages/prism-groq": "1.1.0",
+  "packages/highlightjs-groq": "1.0.1"
 }

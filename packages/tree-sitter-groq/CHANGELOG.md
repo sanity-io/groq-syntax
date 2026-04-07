@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/sanity-io/groq-syntax/compare/tree-sitter-groq-v1.0.0...tree-sitter-groq-v1.1.0) (2026-04-07)
+
+
+### Features
+
+* export refractorGroq from @sanity/prism-groq ([79fca36](https://github.com/sanity-io/groq-syntax/commit/79fca36037f8a8b74772741251929c42b92aafba))
+
+
+### Bug Fixes
+
+* set publishConfig access to public for all packages ([ba11d06](https://github.com/sanity-io/groq-syntax/commit/ba11d06672e03996626b9330fcfe8592cb23a133))
+
 ## 1.0.0 (2026-04-07)
 
 ### Features
