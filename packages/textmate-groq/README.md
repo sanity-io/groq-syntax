@@ -40,12 +40,50 @@ const query2 = /* groq */ `*[_type == "post"]`
 const query3 = defineQuery(`*[_type == "post"]`)
 ```
 
-The injection grammar is at `injections/javascript.tmLanguage.json` and can be bundled in a VS Code extension alongside the main grammar.
+## Markdown fenced code block injection
+
+An injection grammar for highlighting ` ```groq ` fenced code blocks in VS Code's markdown preview:
+
+The injection grammar is at `injections/markdown.tmLanguage.json`.
+
+## Usage with VS Code extensions
+
+In your extension's `package.json`:
+
+```json
+{
+  "contributes": {
+    "languages": [{
+      "id": "groq",
+      "extensions": [".groq"],
+      "aliases": ["GROQ"]
+    }],
+    "grammars": [
+      {
+        "language": "groq",
+        "scopeName": "source.groq",
+        "path": "./node_modules/@sanity/textmate-groq/syntaxes/groq.tmLanguage.json"
+      },
+      {
+        "scopeName": "groq-injection.js",
+        "path": "./node_modules/@sanity/textmate-groq/injections/javascript.tmLanguage.json",
+        "injectTo": ["source.js", "source.ts", "source.tsx", "source.jsx"]
+      },
+      {
+        "scopeName": "groq-injection.markdown",
+        "path": "./node_modules/@sanity/textmate-groq/injections/markdown.tmLanguage.json",
+        "injectTo": ["text.html.markdown"]
+      }
+    ]
+  }
+}
+```
 
 ## Exports
 
 - `@sanity/textmate-groq` - the main grammar (`syntaxes/groq.tmLanguage.json`)
 - `@sanity/textmate-groq/injections/javascript` - JS/TS injection grammar
+- `@sanity/textmate-groq/injections/markdown` - Markdown fenced code block injection
 
 ## License
 

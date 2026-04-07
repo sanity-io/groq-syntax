@@ -11,7 +11,8 @@
   "type": "module",
   "exports": {
     ".": "./syntaxes/groq.tmLanguage.json",
-    "./injections/javascript": "./injections/javascript.tmLanguage.json"
+    "./injections/javascript": "./injections/javascript.tmLanguage.json",
+    "./injections/markdown": "./injections/markdown.tmLanguage.json"
   },
   "files": [
     "syntaxes",
