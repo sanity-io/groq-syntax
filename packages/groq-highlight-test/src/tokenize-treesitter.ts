@@ -242,6 +242,7 @@ export async function tokenizeTreeSitter(source: string): Promise<HighlightToken
     }
   }
 
+  if (!tree) throw new Error('tree-sitter parse returned null')
   walk(tree.rootNode)
   return tokens
 }

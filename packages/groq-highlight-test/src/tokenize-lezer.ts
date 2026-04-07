@@ -1,5 +1,5 @@
 import {parser} from '@sanity/lezer-groq'
-import type {SyntaxNode} from '@lezer/common'
+import type {SyntaxNode, TreeCursor} from '@lezer/common'
 import type {HighlightToken, CanonicalToken} from './canonical.js'
 
 /**
@@ -167,7 +167,7 @@ function emitStringTokens(node: SyntaxNode, source: string, tokens: HighlightTok
  * Uses firstChild() and immediately backs out with parent() to avoid
  * permanently changing cursor position.
  */
-function isLeaf(cursor: ReturnType<typeof parser.parse>['cursor']): boolean {
+function isLeaf(cursor: TreeCursor): boolean {
   if (cursor.firstChild()) {
     cursor.parent()
     return false

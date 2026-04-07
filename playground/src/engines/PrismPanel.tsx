@@ -1,6 +1,6 @@
 import {useMemo} from 'react'
 import {Refractor, registerLanguage} from 'react-refractor'
-import groqGrammar from '../../../packages/prism-groq/groq.js'
+import groqGrammar from '@sanity/prism-groq'
 import {colors} from '../theme'
 
 // Register GROQ with refractor via react-refractor's helper

@@ -1,13 +1,13 @@
 import {useMemo} from 'react'
 import Lowlight from 'react-lowlight'
-import groqDef from '../../../packages/highlightjs-groq/groq.js'
+import groqDef from '@sanity/highlightjs-groq'
 import {colors} from '../theme'
 
 Lowlight.registerLanguage('groq', groqDef)
 
 export function HighlightJsPanel({query}: {query: string}) {
   const element = useMemo(
-    () => <Lowlight language="groq" value={query} />,
+    () => <Lowlight language="groq" value={query} markers={[]} />,
     [query],
   )
 

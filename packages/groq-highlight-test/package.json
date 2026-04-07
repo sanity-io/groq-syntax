@@ -11,13 +11,15 @@
     "@lezer/common": "^1.2.0",
     "@lezer/highlight": "^1.0.0",
     "@sanity/lezer-groq": "workspace:*",
+    "@types/hast": "^3.0.0",
+    "@types/node": "^22.0.0",
     "shiki": "^4.0.0",
     "vscode-textmate": "^9.2.0",
     "vscode-oniguruma": "^2.0.1",
     "lowlight": "^3.3.0",
     "refractor": "^5.0.0",
     "web-tree-sitter": "^0.25.0",
-    "vitest": "^3.1.0",
-    "typescript": "^5.8.0"
+    "vitest": "catalog:",
+    "typescript": "catalog:"
   }
 }

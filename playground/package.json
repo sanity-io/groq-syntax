@@ -12,7 +12,9 @@
     "@codemirror/view": "^6.0.0",
     "@lezer/highlight": "^1.0.0",
     "@sanity-labs/prettier-plugin-groq": "^0.1.0",
+    "@sanity/highlightjs-groq": "workspace:*",
     "@sanity/lezer-groq": "workspace:*",
+    "@sanity/prism-groq": "workspace:*",
     "lowlight": "^3.3.0",
     "prettier": "^3.8.0",
     "react": "^19.0.0",
@@ -27,7 +29,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.0.0",
-    "typescript": "^5.8.0",
+    "typescript": "catalog:",
     "vite": "^6.0.0"
   }
 }
