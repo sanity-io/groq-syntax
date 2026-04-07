@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/sanity-io/groq-syntax/compare/lezer-groq-v1.0.2...lezer-groq-v1.0.3) (2026-04-07)
+
+
+### Bug Fixes
+
+* use conventional token scopes for identifiers across all engines ([bc6da8a](https://github.com/sanity-io/groq-syntax/commit/bc6da8a3cf65fc301974f4079a764e43dfb66152))
+
 ## [1.0.2](https://github.com/sanity-io/groq-syntax/compare/lezer-groq-v1.0.1...lezer-groq-v1.0.2) (2026-04-07)
 
 
