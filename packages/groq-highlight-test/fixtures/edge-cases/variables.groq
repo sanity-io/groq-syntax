@@ -1,6 +1,8 @@
-*
-$type
-$userId
-@
-^
-^^
+{
+  "everything": *,
+  "param1": $type,
+  "param2": $userId,
+  "this": @,
+  "parent": ^,
+  "grandparent": ^^
+}

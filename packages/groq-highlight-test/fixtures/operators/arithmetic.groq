@@ -1,6 +1,8 @@
-price + tax
-price - discount
-count * 2
-total / items
-index % 2
-base ** exponent
+{
+  "sum": price + tax,
+  "diff": price - discount,
+  "product": count * 2,
+  "quotient": total / items,
+  "remainder": index % 2,
+  "power": base ** exponent
+}

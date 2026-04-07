@@ -1,3 +1,5 @@
-*[_type == "post"]{"author": author->name}
-author->
-author->name->title
+*[_type == "post"] {
+  "author": author->name,
+  "authorRef": author->,
+  "deep": author->name->title
+}

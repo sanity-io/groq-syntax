@@ -1,3 +1,5 @@
-items[a && b]
-items[a || b]
-items[!published]
+*[
+  (a && b) ||
+  (c || d) ||
+  !published
+]

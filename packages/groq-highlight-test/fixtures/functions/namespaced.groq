@@ -1,14 +1,16 @@
-math::sum(prices)
-math::avg(scores)
-math::min(values)
-math::max(values)
-string::split(tags, ",")
-string::startsWith(title, "Draft")
-array::join(items, ", ")
-array::compact(list)
-array::unique(ids)
-pt::text(body)
-geo::distance(location, $point)
-dateTime::now()
-delta::operation()
-sanity::projectId()
+{
+  "sum": math::sum(prices),
+  "avg": math::avg(scores),
+  "min": math::min(values),
+  "max": math::max(values),
+  "split": string::split(tags, ","),
+  "startsWith": string::startsWith(title, "Draft"),
+  "joined": array::join(items, ", "),
+  "compact": array::compact(list),
+  "unique": array::unique(ids),
+  "text": pt::text(body),
+  "distance": geo::distance(location, $point),
+  "now": dateTime::now(),
+  "op": delta::operation(),
+  "projectId": sanity::projectId()
+}

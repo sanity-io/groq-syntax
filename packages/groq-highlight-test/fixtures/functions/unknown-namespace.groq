@@ -1,2 +1,4 @@
-custom::doSomething(arg)
-myPlugin::transform(data)
+{
+  "custom": custom::doSomething(arg),
+  "plugin": myPlugin::transform(data)
+}

@@ -1,7 +1,9 @@
-"hello\nworld"
-"tab\there"
-"quote\"inside"
-'single\'quote'
-"unicode \u0041"
-"emoji \u{1F600}"
-"slash \/ backslash \\"
+[
+  "hello\nworld",
+  "tab\there",
+  "quote\"inside",
+  'single\'quote',
+  "unicode \u0041",
+  "emoji \u{1F600}",
+  "slash \/ backslash \\"
+]
