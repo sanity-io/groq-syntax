@@ -8,6 +8,28 @@
 npm install @sanity/prism-groq
 ```
 
+## Usage with react-refractor
+
+```tsx
+import {Refractor, registerLanguage} from 'react-refractor'
+import groq from '@sanity/prism-groq'
+
+// Register the language (do this once, e.g. in your app entry)
+registerLanguage(
+  Object.assign(
+    (prism: {languages: Record<string, unknown>}) => {
+      prism.languages.groq = groq
+    },
+    {displayName: 'groq', aliases: []},
+  ),
+)
+
+// In your component:
+function CodeBlock({query}: {query: string}) {
+  return <Refractor language="groq" value={query} />
+}
+```
+
 ## Usage with Prism.js
 
 ```js
@@ -17,17 +39,40 @@ import '@sanity/prism-groq'
 const html = Prism.highlight(
   '*[_type == "post"]{title, "author": author->name}',
   Prism.languages.groq,
-  'groq'
+  'groq',
 )
 ```
 
-## Usage with refractor/rehype-prism
+## Usage with refractor
 
 ```js
-import {refractor} from 'refractor'
+import {refractor} from 'refractor/core'
 import groq from '@sanity/prism-groq'
 
-refractor.register({...groq, name: 'groq'})
+const syntax = Object.assign(
+  (prism) => { prism.languages.groq = groq },
+  {displayName: 'groq', aliases: []},
+)
+refractor.register(syntax)
+
+const tree = refractor.highlight('*[_type == "post"]', 'groq')
+```
+
+## Usage with rehype-prism
+
+If you use [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus) or similar rehype plugins, register the language before processing:
+
+```js
+import {refractor} from 'refractor/core'
+import groq from '@sanity/prism-groq'
+
+const syntax = Object.assign(
+  (prism) => { prism.languages.groq = groq },
+  {displayName: 'groq', aliases: []},
+)
+refractor.register(syntax)
+
+// Then use ```groq code fences in your markdown
 ```
 
 ## Standalone (no Prism dependency)
@@ -41,23 +86,23 @@ import groq from '@sanity/prism-groq'
 
 ## Tokens
 
-| Token              | Examples                                        |
-| ------------------ | ----------------------------------------------- |
-| `comment`          | `// ...`                                        |
-| `string`           | `"post"`, `'text'`                              |
-| `string > escape`  | `\n`, `\u0041`, `\u{1F600}`                     |
-| `number`           | `42`, `3.14`, `1e10`                            |
-| `boolean`          | `true`, `false`                                 |
-| `null`             | `null`                                          |
-| `keyword-operator` | `in`, `match`, `asc`, `desc`                    |
-| `function`         | `count`, `defined`, `select`, `order`, ...      |
-| `namespace`        | `math`, `pt`, `geo`, ... (before `::`)          |
-| `variable`         | `$param`                                        |
-| `special-variable` | `@`, `^`                                        |
-| `wildcard`         | `*` (everything selector)                       |
-| `operator`         | `==`, `!=`, `&&`, `\|\|`, `->`, `=>`, `\|`, ... |
-| `spread`           | `...`                                           |
-| `punctuation`      | `[`, `]`, `{`, `}`, `(`, `)`, `,`, `:`          |
+| Token | Examples |
+|---|---|
+| `comment` | `// ...` |
+| `string` | `"post"`, `'text'` |
+| `string > escape` | `\n`, `\u0041`, `\u{1F600}` |
+| `number` | `42`, `3.14`, `1e10` |
+| `boolean` | `true`, `false` |
+| `null` | `null` |
+| `keyword-operator` | `in`, `match`, `asc`, `desc` |
+| `function` | `count`, `defined`, `select`, `order`, ... |
+| `namespace` | `math`, `pt`, `geo`, ... (before `::`) |
+| `variable` | `$param` |
+| `special-variable` | `@`, `^` |
+| `wildcard` | `*` (everything selector) |
+| `operator` | `==`, `!=`, `&&`, `\|\|`, `->`, `=>`, `\|`, ... |
+| `spread` | `...` |
+| `punctuation` | `[`, `]`, `{`, `}`, `(`, `)`, `,`, `:` |
 
 ## License
 
