@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/sanity-io/groq-syntax/compare/textmate-groq-v1.0.1...textmate-groq-v1.0.2) (2026-04-07)
+
+
+### Bug Fixes
+
+* add repository field to all packages for npm provenance ([87aa868](https://github.com/sanity-io/groq-syntax/commit/87aa8687650009f0b992acc261acd33c6fa0a9e0))
+
 ## [1.0.1](https://github.com/sanity-io/groq-syntax/compare/textmate-groq-v1.0.0...textmate-groq-v1.0.1) (2026-04-07)
 
 
