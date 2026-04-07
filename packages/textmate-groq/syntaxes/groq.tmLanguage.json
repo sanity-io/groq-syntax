@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "GROQ",
+  "name": "groq",
   "scopeName": "source.groq",
   "patterns": [{"include": "#expression"}],
   "repository": {

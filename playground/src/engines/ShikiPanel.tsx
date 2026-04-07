@@ -11,7 +11,7 @@ function getHighlighter(): Promise<HighlighterCore> {
   if (!highlighterPromise) {
     highlighterPromise = createHighlighterCore({
       themes: [shikiTheme],
-      langs: [{...groqGrammar, name: 'groq'}],
+      langs: [groqGrammar],
       engine: createJavaScriptRegexEngine(),
     })
   }
