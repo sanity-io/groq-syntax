@@ -5,7 +5,8 @@
     "packages/lezer-groq": {},
     "packages/tree-sitter-groq": {},
     "packages/prism-groq": {},
-    "packages/highlightjs-groq": {}
+    "packages/highlightjs-groq": {},
+    "packages/ace-groq": {}
   },
   "bump-minor-pre-major": true,
   "always-link-local": true,
