@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/sanity-io/groq-syntax/compare/textmate-groq-v1.1.1...textmate-groq-v1.1.2) (2026-04-07)
+
+
+### Bug Fixes
+
+* use lowercase `groq` in syntax name ([6da4c74](https://github.com/sanity-io/groq-syntax/commit/6da4c74b169bf3137c05a5062234cde48873576c))
+
 ## [1.1.1](https://github.com/sanity-io/groq-syntax/compare/textmate-groq-v1.1.0...textmate-groq-v1.1.1) (2026-04-07)
 
 

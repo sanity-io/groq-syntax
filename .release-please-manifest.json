@@ -1,5 +1,5 @@
 {
-  "packages/textmate-groq": "1.1.1",
+  "packages/textmate-groq": "1.1.2",
   "packages/lezer-groq": "1.0.3",
   "packages/tree-sitter-groq": "1.1.1",
   "packages/prism-groq": "1.1.2",
