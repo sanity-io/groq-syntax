@@ -15,10 +15,7 @@ function getInitialState(): {query: string; fixtureId: string} {
   const hash = location.hash.slice(1)
   const key = hash ? decodeURIComponent(hash) : DEFAULT_FIXTURE
   const fixture = findFixture(key)
-  if (fixture) {
-    return {query: fixture.content, fixtureId: fixtureKey(fixture)}
-  }
-  return {query: fixtures[0]?.content ?? '', fixtureId: ''}
+  return fixture ? {query: fixture.content, fixtureId: fixtureKey(fixture)} :  {query: fixtures[0]?.content ?? '', fixtureId: ''}
 }
 
 export function App() {

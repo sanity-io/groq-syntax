@@ -77,7 +77,7 @@ const groq = {
 }
 
 // Auto-register with Prism if available globally
-if (typeof Prism !== 'undefined') {
+if (typeof Prism !== 'undefined' && typeof Prism.languages === 'object' && Prism.languages !== null && !Array.isArray(Prism.languages)) {
   Prism.languages.groq = groq
 }
 

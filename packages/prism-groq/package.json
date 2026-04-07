@@ -8,7 +8,8 @@
     ".": "./groq.js"
   },
   "files": [
-    "groq.js"
+    "groq.js",
+    "groq.d.ts"
   ],
   "keywords": [
     "prism",

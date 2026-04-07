@@ -6,3 +6,4 @@ target/
 *.a
 *.so
 *.dylib
+/tree-sitter

@@ -17,7 +17,8 @@
   ],
   "scripts": {
     "build": "lezer-generator src/groq.grammar -o src/parser && rollup -c && cp src/index.d.ts dist/",
-    "build:debug": "lezer-generator src/groq.grammar --names -o src/parser && rollup -c && cp src/index.d.ts dist/"
+    "build:debug": "lezer-generator src/groq.grammar --names -o src/parser && rollup -c && cp src/index.d.ts dist/",
+    "prepublishOnly": "pnpm build"
   },
   "dependencies": {
     "@codemirror/language": "^6.0.0",
