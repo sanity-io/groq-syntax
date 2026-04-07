@@ -1,6 +1,6 @@
 {
   "name": "@sanity/highlightjs-groq",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "highlight.js language definition for GROQ",
   "license": "MIT",
   "type": "module",
