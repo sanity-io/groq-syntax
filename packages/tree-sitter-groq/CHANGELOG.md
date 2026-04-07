@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/sanity-io/groq-syntax/compare/tree-sitter-groq-v1.1.0...tree-sitter-groq-v1.1.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* add repository field to all packages for npm provenance ([87aa868](https://github.com/sanity-io/groq-syntax/commit/87aa8687650009f0b992acc261acd33c6fa0a9e0))
+
 ## [1.1.0](https://github.com/sanity-io/groq-syntax/compare/tree-sitter-groq-v1.0.0...tree-sitter-groq-v1.1.0) (2026-04-07)
 
 
