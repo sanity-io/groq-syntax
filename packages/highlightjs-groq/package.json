@@ -24,5 +24,8 @@
     "highlight.js": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

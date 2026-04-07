@@ -24,5 +24,8 @@
     "prismjs": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

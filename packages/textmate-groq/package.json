@@ -11,5 +11,8 @@
   "files": [
     "syntaxes",
     "injections"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
