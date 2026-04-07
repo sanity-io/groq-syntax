@@ -83,7 +83,7 @@ function getColor(node: Node): string {
 
 function classifyIdentifier(node: Node): string {
   const parent = node.parent
-  if (!parent) return colors.red
+  if (!parent) return colors.fg
 
   if (parent.type === 'function_call') {
     const fn = parent.childForFieldName('function')
@@ -97,7 +97,7 @@ function classifyIdentifier(node: Node): string {
     if (fn && fn.id === node.id) return colors.blue
   }
 
-  return colors.red
+  return colors.fg
 }
 
 function escapeHtml(text: string): string {

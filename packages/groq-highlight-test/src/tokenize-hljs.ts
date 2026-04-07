@@ -16,6 +16,7 @@ const SCOPE_MAP: Record<string, CanonicalToken> = {
   keyword: 'operator.keyword',
   'title.function.invoke': 'identifier.function',
   'title.class': 'identifier.namespace',
+  property: 'identifier',
   variable: 'variable',
   'variable.language': 'variable.special',
   operator: 'operator',
@@ -100,11 +101,6 @@ export function tokenizeHljs(source: string): HighlightToken[] {
         // ^ is variable.special, not plain variable
         if (canonical === 'variable' && /^\^+$/.test(text)) {
           canonical = 'variable.special'
-        }
-
-        // Plain identifiers (not $param, not @, not ^) should be 'identifier'
-        if (canonical === 'variable' && /^[a-zA-Z_]\w*$/.test(text)) {
-          canonical = 'identifier'
         }
 
         if (canonical) {

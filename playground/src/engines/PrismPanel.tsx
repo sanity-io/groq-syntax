@@ -52,5 +52,5 @@ const prismStyles = `
 .prism-output .token.operator { color: ${colors.cyan}; }
 .prism-output .token.punctuation { color: ${colors.fg}; }
 .prism-output .token.accessor { color: ${colors.cyan}; }
-.prism-output .token.identifier { color: ${colors.red}; }
+.prism-output .token.identifier { color: ${colors.fg}; }
 `

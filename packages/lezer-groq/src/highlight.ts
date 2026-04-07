@@ -9,7 +9,7 @@ export const groqHighlighting = styleTags({
   StringEscape: t.escape,
   Number: t.number,
   LineComment: t.lineComment,
-  Identifier: t.variableName,
+  Identifier: t.propertyName,
   'PropertyPair/Identifier': t.propertyName,
   'DotAccess/Identifier': t.propertyName,
   'DerefAccess/Identifier': t.propertyName,

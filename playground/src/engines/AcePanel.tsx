@@ -91,5 +91,5 @@ const aceStyles = `
 .ace-output .ace_punctuation.ace_accessor { color: ${colors.cyan} !important; }
 .ace-output .ace_punctuation.ace_namespace { color: ${colors.fg} !important; }
 .ace-output .ace_paren { color: ${colors.fg} !important; }
-.ace-output .ace_identifier { color: ${colors.red} !important; }
+.ace-output .ace_identifier { color: ${colors.fg} !important; }
 `

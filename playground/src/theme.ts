@@ -6,7 +6,7 @@
 export const colors = {
   bg: '#282c34',
   fg: '#abb2bf',
-  red: '#e06c75', // identifiers, variables, properties
+  red: '#e06c75', // variables ($param, @, ^)
   green: '#98c379', // strings
   yellow: '#e5c07b', // namespaces
   blue: '#61afef', // functions
@@ -45,7 +45,7 @@ export const shikiTheme = {
       scope: 'punctuation.separator.namespace',
       settings: {foreground: colors.fg},
     },
-    {scope: 'entity.name.tag', settings: {foreground: colors.red}},
+    {scope: 'variable.other.property', settings: {foreground: colors.fg}},
     {scope: 'variable.parameter', settings: {foreground: colors.red}},
     {
       scope: 'variable.language.wildcard',

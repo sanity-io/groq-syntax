@@ -42,7 +42,7 @@ export function mapTextmateScope(scopes: string[]): CanonicalToken | undefined {
       !scope.startsWith('punctuation.separator.namespace.')
     )
       return 'punctuation.delimiter'
-    if (scope.startsWith('entity.name.tag.')) return 'identifier'
+    if (scope.startsWith('variable.other.property.')) return 'identifier'
   }
   return undefined
 }
