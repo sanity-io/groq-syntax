@@ -53,7 +53,7 @@ const groq = {
     alias: 'variable',
   },
   wildcard: {
-    pattern: /\*(?=\s*[\[{|)\],}]|\s*$)/,
+    pattern: /\*(?=\s*[\[{|])/,
     alias: 'variable',
   },
   spread: {

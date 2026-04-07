@@ -1919,7 +1919,7 @@ exports[`Prism tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 19,
     "start": 18,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 20,
@@ -2074,7 +2074,7 @@ exports[`Prism tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 10,
     "start": 9,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 11,
@@ -2158,7 +2158,7 @@ exports[`Prism tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 62,
     "start": 61,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 64,
@@ -2194,7 +2194,7 @@ exports[`Prism tokenizer > edge-cases > tokenizes all edge-cases fixtures > edge
     "end": 78,
     "start": 77,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 80,
@@ -3762,7 +3762,7 @@ exports[`Prism tokenizer > operators > tokenizes all operators fixtures > operat
     "end": 72,
     "start": 71,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 74,
@@ -6599,7 +6599,7 @@ exports[`Prism tokenizer > real-world > tokenizes all real-world fixtures > real
     "end": 165,
     "start": 164,
     "text": "*",
-    "token": "wildcard",
+    "token": "operator",
   },
   {
     "end": 169,
