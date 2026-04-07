@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/sanity-io/groq-syntax/compare/textmate-groq-v1.1.0...textmate-groq-v1.1.1) (2026-04-07)
+
+
+### Bug Fixes
+
+* use conventional token scopes for identifiers across all engines ([bc6da8a](https://github.com/sanity-io/groq-syntax/commit/bc6da8a3cf65fc301974f4079a764e43dfb66152))
+
 ## [1.1.0](https://github.com/sanity-io/groq-syntax/compare/textmate-groq-v1.0.2...textmate-groq-v1.1.0) (2026-04-07)
 
 
