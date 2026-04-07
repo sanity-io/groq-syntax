@@ -23,7 +23,7 @@ async function initGrammar(): Promise<IGrammar> {
     'node_modules',
     'vscode-oniguruma',
     'release',
-    'onig.wasm',
+    'onig.wasm'
   )
   const wasmBin = await readFile(onigWasmPath)
   await loadWASM({data: wasmBin})
@@ -34,7 +34,7 @@ async function initGrammar(): Promise<IGrammar> {
     '..',
     'textmate-groq',
     'syntaxes',
-    'groq.tmLanguage.json',
+    'groq.tmLanguage.json'
   )
   const grammarContent = await readFile(grammarPath, 'utf-8')
   const rawGrammar = parseRawGrammar(grammarContent, grammarPath)

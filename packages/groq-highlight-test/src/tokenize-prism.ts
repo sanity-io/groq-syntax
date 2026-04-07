@@ -8,7 +8,7 @@ const groqSyntax = Object.assign(
   (prism: {languages: Record<string, unknown>}) => {
     prism.languages.groq = groqGrammar
   },
-  {displayName: 'groq', aliases: [] as string[]},
+  {displayName: 'groq', aliases: [] as string[]}
 )
 refractor.register(groqSyntax)
 
@@ -80,7 +80,7 @@ export function tokenizePrism(source: string): HighlightToken[] {
         // Distinguish brackets from other punctuation
         const token =
           canonical === 'punctuation.delimiter' && BRACKETS.has(text)
-            ? 'punctuation.bracket' as CanonicalToken
+            ? ('punctuation.bracket' as CanonicalToken)
             : canonical
 
         tokens.push({

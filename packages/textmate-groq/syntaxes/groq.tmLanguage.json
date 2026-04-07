@@ -2,31 +2,29 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "GROQ",
   "scopeName": "source.groq",
-  "patterns": [
-    { "include": "#expression" }
-  ],
+  "patterns": [{"include": "#expression"}],
   "repository": {
     "expression": {
       "patterns": [
-        { "include": "#comment" },
-        { "include": "#string-double" },
-        { "include": "#string-single" },
-        { "include": "#number" },
-        { "include": "#keyword" },
-        { "include": "#namespace-call" },
-        { "include": "#function-call" },
-        { "include": "#operator-keyword" },
-        { "include": "#variable" },
-        { "include": "#variable-special" },
-        { "include": "#wildcard" },
-        { "include": "#operator" },
-        { "include": "#pipe" },
-        { "include": "#accessor" },
-        { "include": "#filter" },
-        { "include": "#projection" },
-        { "include": "#group" },
-        { "include": "#punctuation" },
-        { "include": "#identifier" }
+        {"include": "#comment"},
+        {"include": "#string-double"},
+        {"include": "#string-single"},
+        {"include": "#number"},
+        {"include": "#keyword"},
+        {"include": "#namespace-call"},
+        {"include": "#function-call"},
+        {"include": "#operator-keyword"},
+        {"include": "#variable"},
+        {"include": "#variable-special"},
+        {"include": "#wildcard"},
+        {"include": "#operator"},
+        {"include": "#pipe"},
+        {"include": "#accessor"},
+        {"include": "#filter"},
+        {"include": "#projection"},
+        {"include": "#group"},
+        {"include": "#punctuation"},
+        {"include": "#identifier"}
       ]
     },
     "comment": {
@@ -36,30 +34,26 @@
     "string-double": {
       "begin": "\"",
       "beginCaptures": {
-        "0": { "name": "punctuation.definition.string.begin.groq" }
+        "0": {"name": "punctuation.definition.string.begin.groq"}
       },
       "end": "\"",
       "endCaptures": {
-        "0": { "name": "punctuation.definition.string.end.groq" }
+        "0": {"name": "punctuation.definition.string.end.groq"}
       },
       "name": "string.quoted.double.groq",
-      "patterns": [
-        { "include": "#string-escape" }
-      ]
+      "patterns": [{"include": "#string-escape"}]
     },
     "string-single": {
       "begin": "'",
       "beginCaptures": {
-        "0": { "name": "punctuation.definition.string.begin.groq" }
+        "0": {"name": "punctuation.definition.string.begin.groq"}
       },
       "end": "'",
       "endCaptures": {
-        "0": { "name": "punctuation.definition.string.end.groq" }
+        "0": {"name": "punctuation.definition.string.end.groq"}
       },
       "name": "string.quoted.single.groq",
-      "patterns": [
-        { "include": "#string-escape" }
-      ]
+      "patterns": [{"include": "#string-escape"}]
     },
     "string-escape": {
       "match": "\\\\(?:[\"\\\\'/bfnrt]|u[0-9a-fA-F]{4}|u\\{[0-9a-fA-F]+\\})",
@@ -168,41 +162,35 @@
     "filter": {
       "begin": "\\[",
       "beginCaptures": {
-        "0": { "name": "punctuation.definition.bracket.square.begin.groq" }
+        "0": {"name": "punctuation.definition.bracket.square.begin.groq"}
       },
       "end": "\\]",
       "endCaptures": {
-        "0": { "name": "punctuation.definition.bracket.square.end.groq" }
+        "0": {"name": "punctuation.definition.bracket.square.end.groq"}
       },
-      "patterns": [
-        { "include": "#expression" }
-      ]
+      "patterns": [{"include": "#expression"}]
     },
     "projection": {
       "begin": "\\{",
       "beginCaptures": {
-        "0": { "name": "punctuation.definition.bracket.curly.begin.groq" }
+        "0": {"name": "punctuation.definition.bracket.curly.begin.groq"}
       },
       "end": "\\}",
       "endCaptures": {
-        "0": { "name": "punctuation.definition.bracket.curly.end.groq" }
+        "0": {"name": "punctuation.definition.bracket.curly.end.groq"}
       },
-      "patterns": [
-        { "include": "#expression" }
-      ]
+      "patterns": [{"include": "#expression"}]
     },
     "group": {
       "begin": "\\(",
       "beginCaptures": {
-        "0": { "name": "punctuation.definition.bracket.round.begin.groq" }
+        "0": {"name": "punctuation.definition.bracket.round.begin.groq"}
       },
       "end": "\\)",
       "endCaptures": {
-        "0": { "name": "punctuation.definition.bracket.round.end.groq" }
+        "0": {"name": "punctuation.definition.bracket.round.end.groq"}
       },
-      "patterns": [
-        { "include": "#expression" }
-      ]
+      "patterns": [{"include": "#expression"}]
     },
     "punctuation": {
       "patterns": [
@@ -223,9 +211,9 @@
     "namespace-call": {
       "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(::)([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()",
       "captures": {
-        "1": { "name": "entity.name.namespace.groq" },
-        "2": { "name": "punctuation.separator.namespace.groq" },
-        "3": { "name": "support.function.groq" }
+        "1": {"name": "entity.name.namespace.groq"},
+        "2": {"name": "punctuation.separator.namespace.groq"},
+        "3": {"name": "support.function.groq"}
       }
     },
     "function-call": {

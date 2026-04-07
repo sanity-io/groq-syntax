@@ -48,7 +48,7 @@ describe('Cross-engine comparison (TextMate vs Lezer)', () => {
 
           expect(
             result.mismatches.length,
-            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`
           ).toBeLessThanOrEqual(maxMismatches)
         }
       })
@@ -78,7 +78,7 @@ describe('Cross-engine comparison (TextMate vs Tree-sitter)', () => {
 
           expect(
             result.mismatches.length,
-            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`
           ).toBeLessThanOrEqual(maxMismatches)
         }
       })
@@ -107,7 +107,7 @@ describe('Cross-engine comparison (Lezer vs Tree-sitter)', () => {
 
           expect(
             result.mismatches.length,
-            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`
           ).toBeLessThanOrEqual(maxMismatches)
         }
       })
@@ -135,7 +135,7 @@ describe('Cross-engine comparison (TextMate vs Prism)', () => {
 
           expect(
             result.mismatches.length,
-            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`
           ).toBeLessThanOrEqual(maxMismatches)
         }
       })
@@ -163,7 +163,7 @@ describe('Cross-engine comparison (TextMate vs highlight.js)', () => {
 
           expect(
             result.mismatches.length,
-            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`,
+            `${fixture}: ${result.mismatches.length} mismatches [${mismatchDesc}]`
           ).toBeLessThanOrEqual(maxMismatches)
         }
       })

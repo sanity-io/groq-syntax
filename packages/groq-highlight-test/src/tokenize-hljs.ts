@@ -108,7 +108,12 @@ export function tokenizeHljs(source: string): HighlightToken[] {
         }
 
         if (canonical) {
-          tokens.push({text, token: canonical, start: offset, end: offset + text.length})
+          tokens.push({
+            text,
+            token: canonical,
+            start: offset,
+            end: offset + text.length,
+          })
         }
       }
 

@@ -28,7 +28,8 @@ const groq = {
   boolean: /\b(?:false|true)\b/,
   null: /\bnull\b/,
   'keyword-operator': /\b(?:asc|desc|in|match)\b/,
-  function: /\b(?:after|before|boost|coalesce|count|dateTime|defined|identity|length|lower|now|order|path|references|round|score|select|string|upper)\b(?=\s*\()/,
+  function:
+    /\b(?:after|before|boost|coalesce|count|dateTime|defined|identity|length|lower|now|order|path|references|round|score|select|string|upper)\b(?=\s*\()/,
   'namespaced-call': {
     pattern: /\b[a-zA-Z_]\w*\s*::\s*[a-zA-Z_]\w*(?=\s*\()/,
     inside: {
@@ -77,7 +78,12 @@ const groq = {
 }
 
 // Auto-register with Prism if available globally
-if (typeof Prism !== 'undefined' && typeof Prism.languages === 'object' && Prism.languages !== null && !Array.isArray(Prism.languages)) {
+if (
+  typeof Prism !== 'undefined' &&
+  typeof Prism.languages === 'object' &&
+  Prism.languages !== null &&
+  !Array.isArray(Prism.languages)
+) {
   Prism.languages.groq = groq
 }
 

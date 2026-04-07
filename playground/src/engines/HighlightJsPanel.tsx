@@ -6,10 +6,7 @@ import {colors} from '../theme'
 Lowlight.registerLanguage('groq', groqDef)
 
 export function HighlightJsPanel({query}: {query: string}) {
-  const element = useMemo(
-    () => <Lowlight language="groq" value={query} markers={[]} />,
-    [query],
-  )
+  const element = useMemo(() => <Lowlight language="groq" value={query} markers={[]} />, [query])
 
   return (
     <div className="hljs-output">

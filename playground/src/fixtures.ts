@@ -1,7 +1,8 @@
-const fixtureModules = import.meta.glob(
-  '../../packages/groq-highlight-test/fixtures/**/*.groq',
-  {query: '?raw', import: 'default', eager: true},
-)
+const fixtureModules = import.meta.glob('../../packages/groq-highlight-test/fixtures/**/*.groq', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+})
 
 export interface Fixture {
   name: string

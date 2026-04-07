@@ -8,7 +8,14 @@ import {fileURLToPath} from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 async function loadGrammar() {
-  const grammarPath = join(__dirname, '..', '..', 'textmate-groq', 'syntaxes', 'groq.tmLanguage.json')
+  const grammarPath = join(
+    __dirname,
+    '..',
+    '..',
+    'textmate-groq',
+    'syntaxes',
+    'groq.tmLanguage.json'
+  )
   return JSON.parse(await readFile(grammarPath, 'utf-8'))
 }
 

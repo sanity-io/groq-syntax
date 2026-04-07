@@ -2,13 +2,11 @@
 
 ## 1.0.0 (2026-04-07)
 
-
 ### Features
 
-* GROQ injection grammars for JavaScript/TypeScript ([33f9337](https://github.com/sanity-io/groq-syntax/commit/33f93370cf63e664292c7ff9dd3e2efc5a0a4594))
-* tree-sitter grammar for GROQ with highlights and test corpus ([6d48eb4](https://github.com/sanity-io/groq-syntax/commit/6d48eb40860c63a4ee8afd0b811df9399f6898af))
-
+- GROQ injection grammars for JavaScript/TypeScript ([33f9337](https://github.com/sanity-io/groq-syntax/commit/33f93370cf63e664292c7ff9dd3e2efc5a0a4594))
+- tree-sitter grammar for GROQ with highlights and test corpus ([6d48eb4](https://github.com/sanity-io/groq-syntax/commit/6d48eb40860c63a4ee8afd0b811df9399f6898af))
 
 ### Bug Fixes
 
-* **ci:** move tree-sitter injection queries out of queries/ ([2e0676d](https://github.com/sanity-io/groq-syntax/commit/2e0676dce26aaee7131cef3876923a721a624da6))
+- **ci:** move tree-sitter injection queries out of queries/ ([2e0676d](https://github.com/sanity-io/groq-syntax/commit/2e0676dce26aaee7131cef3876923a721a624da6))

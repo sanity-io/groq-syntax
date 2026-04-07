@@ -8,15 +8,12 @@ const groqSyntax = Object.assign(
   (prism: {languages: Record<string, unknown>}) => {
     prism.languages.groq = groqGrammar
   },
-  {displayName: 'groq', aliases: [] as string[]},
+  {displayName: 'groq', aliases: [] as string[]}
 )
 registerLanguage(groqSyntax)
 
 export function PrismPanel({query}: {query: string}) {
-  const element = useMemo(
-    () => <Refractor language="groq" value={query} />,
-    [query],
-  )
+  const element = useMemo(() => <Refractor language="groq" value={query} />, [query])
 
   return (
     <div className="prism-output">

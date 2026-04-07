@@ -15,7 +15,9 @@ import hljs from 'highlight.js/lib/core'
 import groq from '@sanity/highlightjs-groq'
 
 hljs.registerLanguage('groq', groq)
-const result = hljs.highlight('*[_type == "post"]{title}', {language: 'groq'})
+const result = hljs.highlight('*[_type == "post"]{title}', {
+  language: 'groq',
+})
 console.log(result.value)
 ```
 

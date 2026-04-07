@@ -1,12 +1,14 @@
 {
-  "grammars": [{
-    "name": "groq",
-    "camelcase": "GROQ",
-    "scope": "source.groq",
-    "path": ".",
-    "file-types": ["groq"],
-    "highlights": "queries/highlights.scm"
-  }],
+  "grammars": [
+    {
+      "name": "groq",
+      "camelcase": "GROQ",
+      "scope": "source.groq",
+      "path": ".",
+      "file-types": ["groq"],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
   "metadata": {
     "version": "0.0.0",
     "license": "MIT",

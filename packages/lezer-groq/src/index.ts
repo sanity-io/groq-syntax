@@ -1,10 +1,17 @@
-import {parser} from "./parser.js"
-import {LRLanguage, LanguageSupport, foldNodeProp, foldInside, indentNodeProp, continuedIndent} from "@codemirror/language"
+import {parser} from './parser.js'
+import {
+  LRLanguage,
+  LanguageSupport,
+  foldNodeProp,
+  foldInside,
+  indentNodeProp,
+  continuedIndent,
+} from '@codemirror/language'
 
 export {parser}
 
 export const groqLanguage = LRLanguage.define({
-  name: "groq",
+  name: 'groq',
   parser: parser.configure({
     props: [
       indentNodeProp.add({
@@ -13,13 +20,13 @@ export const groqLanguage = LRLanguage.define({
         ObjectLiteral: continuedIndent({except: /^\s*\}/}),
       }),
       foldNodeProp.add({
-        "Projection ObjectLiteral ArrayLiteral Filter": foldInside,
+        'Projection ObjectLiteral ArrayLiteral Filter': foldInside,
       }),
     ],
   }),
   languageData: {
-    closeBrackets: {brackets: ["[", "{", "(", '"', "'"]},
-    commentTokens: {line: "//"},
+    closeBrackets: {brackets: ['[', '{', '(', '"', "'"]},
+    commentTokens: {line: '//'},
   },
 })
 

@@ -53,7 +53,11 @@ export function mergeAdjacentTokens(tokens: HighlightToken[]): HighlightToken[] 
 
     while (j < tokens.length) {
       const next = tokens[j]
-      if (MERGEABLE_TYPES.has(next.token) && mergedType(next.token) === targetType && next.start === end) {
+      if (
+        MERGEABLE_TYPES.has(next.token) &&
+        mergedType(next.token) === targetType &&
+        next.start === end
+      ) {
         end = next.end
         text += next.text
         j++
@@ -105,7 +109,7 @@ export interface ComparisonResult {
 export function compareTokens(
   fixture: string,
   rawTokensA: HighlightToken[],
-  rawTokensB: HighlightToken[],
+  rawTokensB: HighlightToken[]
 ): ComparisonResult {
   const tokensA = mergeAdjacentTokens(rawTokensA)
   const tokensB = mergeAdjacentTokens(rawTokensB)

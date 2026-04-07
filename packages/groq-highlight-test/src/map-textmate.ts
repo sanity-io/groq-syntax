@@ -8,7 +8,7 @@ import type {CanonicalToken} from './canonical.js'
  */
 export function mapTextmateScope(scopes: string[]): CanonicalToken | undefined {
   for (let i = scopes.length - 1; i >= 0; i--) {
-    const scope = scopes[i];
+    const scope = scopes[i]
     if (scope.startsWith('comment.')) return 'comment'
     if (scope.startsWith('constant.character.escape.')) return 'string.escape'
     if (scope.startsWith('string.')) return 'string'

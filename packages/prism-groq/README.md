@@ -41,23 +41,23 @@ import groq from '@sanity/prism-groq'
 
 ## Tokens
 
-| Token | Examples |
-|---|---|
-| `comment` | `// ...` |
-| `string` | `"post"`, `'text'` |
-| `string > escape` | `\n`, `\u0041`, `\u{1F600}` |
-| `number` | `42`, `3.14`, `1e10` |
-| `boolean` | `true`, `false` |
-| `null` | `null` |
-| `keyword-operator` | `in`, `match`, `asc`, `desc` |
-| `function` | `count`, `defined`, `select`, `order`, ... |
-| `namespace` | `math`, `pt`, `geo`, ... (before `::`) |
-| `variable` | `$param` |
-| `special-variable` | `@`, `^` |
-| `wildcard` | `*` (everything selector) |
-| `operator` | `==`, `!=`, `&&`, `\|\|`, `->`, `=>`, `\|`, ... |
-| `spread` | `...` |
-| `punctuation` | `[`, `]`, `{`, `}`, `(`, `)`, `,`, `:` |
+| Token              | Examples                                        |
+| ------------------ | ----------------------------------------------- |
+| `comment`          | `// ...`                                        |
+| `string`           | `"post"`, `'text'`                              |
+| `string > escape`  | `\n`, `\u0041`, `\u{1F600}`                     |
+| `number`           | `42`, `3.14`, `1e10`                            |
+| `boolean`          | `true`, `false`                                 |
+| `null`             | `null`                                          |
+| `keyword-operator` | `in`, `match`, `asc`, `desc`                    |
+| `function`         | `count`, `defined`, `select`, `order`, ...      |
+| `namespace`        | `math`, `pt`, `geo`, ... (before `::`)          |
+| `variable`         | `$param`                                        |
+| `special-variable` | `@`, `^`                                        |
+| `wildcard`         | `*` (everything selector)                       |
+| `operator`         | `==`, `!=`, `&&`, `\|\|`, `->`, `=>`, `\|`, ... |
+| `spread`           | `...`                                           |
+| `punctuation`      | `[`, `]`, `{`, `}`, `(`, `)`, `,`, `:`          |
 
 ## License
 

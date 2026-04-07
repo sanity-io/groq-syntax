@@ -142,13 +142,19 @@ function emitStringTokens(node: SyntaxNode, source: string, tokens: HighlightTok
     if (child.from > pos) {
       const gapText = source.slice(pos, child.from)
       if (gapText) {
-        tokens.push({text: gapText, token: 'string', start: pos, end: child.from})
+        tokens.push({
+          text: gapText,
+          token: 'string',
+          start: pos,
+          end: child.from,
+        })
       }
     }
     // Emit the child
     const childText = source.slice(child.from, child.to)
     if (childText) {
-      const token = child.type.name === 'StringEscape' ? 'string.escape' as const : 'string' as const
+      const token =
+        child.type.name === 'StringEscape' ? ('string.escape' as const) : ('string' as const)
       tokens.push({text: childText, token, start: child.from, end: child.to})
     }
     pos = child.to

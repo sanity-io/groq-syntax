@@ -19,9 +19,18 @@ const highlightStyle = HighlightStyle.define([
   {tag: t.special(t.variableName), color: colors.red},
   {tag: t.self, color: colors.red},
   {tag: t.operatorKeyword, color: colors.purple},
-  {tag: [t.compareOperator, t.arithmeticOperator, t.logicOperator, t.operator], color: colors.cyan},
-  {tag: [t.controlOperator, t.definitionOperator, t.derefOperator], color: colors.cyan},
-  {tag: [t.paren, t.squareBracket, t.brace, t.separator, t.punctuation], color: colors.fg},
+  {
+    tag: [t.compareOperator, t.arithmeticOperator, t.logicOperator, t.operator],
+    color: colors.cyan,
+  },
+  {
+    tag: [t.controlOperator, t.definitionOperator, t.derefOperator],
+    color: colors.cyan,
+  },
+  {
+    tag: [t.paren, t.squareBracket, t.brace, t.separator, t.punctuation],
+    color: colors.fg,
+  },
 ])
 
 const baseTheme = EditorView.theme({

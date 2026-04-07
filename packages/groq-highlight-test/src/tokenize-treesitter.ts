@@ -22,7 +22,7 @@ async function initParser(): Promise<Parser> {
     '..',
     'node_modules',
     'web-tree-sitter',
-    'tree-sitter.wasm',
+    'tree-sitter.wasm'
   )
   await Parser.init({
     locateFile: (scriptName: string) => {
@@ -38,7 +38,7 @@ async function initParser(): Promise<Parser> {
     '..',
     '..',
     'tree-sitter-groq',
-    'tree-sitter-groq.wasm',
+    'tree-sitter-groq.wasm'
   )
   const wasmBytes = await readFile(wasmPath)
   const language = await Language.load(wasmBytes)
@@ -155,10 +155,20 @@ function emitStringTokens(node: Node, tokens: HighlightToken[]) {
     if (!text) continue
 
     if (child.type === 'escape_sequence') {
-      tokens.push({text, token: 'string.escape', start: child.startIndex, end: child.endIndex})
+      tokens.push({
+        text,
+        token: 'string.escape',
+        start: child.startIndex,
+        end: child.endIndex,
+      })
     } else {
       // Quote characters and string_content are both emitted as 'string'
-      tokens.push({text, token: 'string', start: child.startIndex, end: child.endIndex})
+      tokens.push({
+        text,
+        token: 'string',
+        start: child.startIndex,
+        end: child.endIndex,
+      })
     }
   }
 }
@@ -223,13 +233,23 @@ export async function tokenizeTreeSitter(source: string): Promise<HighlightToken
           canonical = classifyIdentifier(node)
         }
         if (canonical) {
-          tokens.push({text, token: canonical, start: node.startIndex, end: node.endIndex})
+          tokens.push({
+            text,
+            token: canonical,
+            start: node.startIndex,
+            end: node.endIndex,
+          })
         }
       } else {
         // Anonymous leaf: look up by text
         const canonical = ANON_MAP[text]
         if (canonical) {
-          tokens.push({text, token: canonical, start: node.startIndex, end: node.endIndex})
+          tokens.push({
+            text,
+            token: canonical,
+            start: node.startIndex,
+            end: node.endIndex,
+          })
         }
       }
       return
