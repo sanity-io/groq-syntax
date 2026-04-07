@@ -10,7 +10,7 @@ Standard highlight queries are included at `queries/highlights.scm` using the ca
 
 ## JavaScript/TypeScript injection
 
-Injection queries for detecting GROQ inside JS/TS template literals are at `queries/injections.scm`. These handle:
+Injection queries for detecting GROQ inside JS/TS template literals are at `injections/javascript.scm`. These handle:
 
 ```ts
 const query1 = groq`*[_type == "post"]`
