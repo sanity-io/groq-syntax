@@ -3,6 +3,11 @@
   "version": "1.0.1",
   "description": "highlight.js language definition for GROQ",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanity-io/groq-syntax.git",
+    "directory": "packages/highlightjs-groq"
+  },
   "type": "module",
   "exports": {
     ".": "./groq.js"

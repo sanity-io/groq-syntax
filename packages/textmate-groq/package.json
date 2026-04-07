@@ -3,6 +3,11 @@
   "version": "1.0.1",
   "description": "TextMate grammar for GROQ query language",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanity-io/groq-syntax.git",
+    "directory": "packages/textmate-groq"
+  },
   "type": "module",
   "exports": {
     ".": "./syntaxes/groq.tmLanguage.json",
