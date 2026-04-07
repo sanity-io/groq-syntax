@@ -88,3 +88,19 @@ if (
 }
 
 export default groq
+
+/**
+ * Refractor/react-refractor compatible registration function.
+ *
+ * Usage:
+ *   import {registerLanguage} from 'react-refractor'
+ *   import {refractorGroq} from '@sanity/prism-groq'
+ *   registerLanguage(refractorGroq)
+ */
+export const refractorGroq = Object.assign(
+  /** @param {{languages: Record<string, unknown>}} prism */
+  (prism) => {
+    prism.languages.groq = groq
+  },
+  {displayName: 'groq', aliases: []},
+)

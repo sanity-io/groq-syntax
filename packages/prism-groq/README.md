@@ -12,19 +12,10 @@ npm install @sanity/prism-groq
 
 ```tsx
 import {Refractor, registerLanguage} from 'react-refractor'
-import groq from '@sanity/prism-groq'
+import {refractorGroq} from '@sanity/prism-groq'
 
-// Register the language (do this once, e.g. in your app entry)
-registerLanguage(
-  Object.assign(
-    (prism: {languages: Record<string, unknown>}) => {
-      prism.languages.groq = groq
-    },
-    {displayName: 'groq', aliases: []},
-  ),
-)
+registerLanguage(refractorGroq)
 
-// In your component:
 function CodeBlock({query}: {query: string}) {
   return <Refractor language="groq" value={query} />
 }
@@ -47,32 +38,11 @@ const html = Prism.highlight(
 
 ```js
 import {refractor} from 'refractor/core'
-import groq from '@sanity/prism-groq'
+import {refractorGroq} from '@sanity/prism-groq'
 
-const syntax = Object.assign(
-  (prism) => { prism.languages.groq = groq },
-  {displayName: 'groq', aliases: []},
-)
-refractor.register(syntax)
+refractor.register(refractorGroq)
 
 const tree = refractor.highlight('*[_type == "post"]', 'groq')
-```
-
-## Usage with rehype-prism
-
-If you use [rehype-prism-plus](https://github.com/timlrx/rehype-prism-plus) or similar rehype plugins, register the language before processing:
-
-```js
-import {refractor} from 'refractor/core'
-import groq from '@sanity/prism-groq'
-
-const syntax = Object.assign(
-  (prism) => { prism.languages.groq = groq },
-  {displayName: 'groq', aliases: []},
-)
-refractor.register(syntax)
-
-// Then use ```groq code fences in your markdown
 ```
 
 ## Standalone (no Prism dependency)
