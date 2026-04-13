@@ -54,6 +54,10 @@
   line-height: 1.5;
 }
 
+.editor-custom textarea {
+  min-height: 240px;
+}
+
 .panels {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

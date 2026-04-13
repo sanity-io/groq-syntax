@@ -1,5 +1,7 @@
 import {fixtures, fixtureKey, type Fixture} from '../fixtures'
 
+export const CUSTOM = '__custom__'
+
 export function FixturePicker({
   selected,
   onSelect,
@@ -17,9 +19,11 @@ export function FixturePicker({
         if (fixture) onSelect(fixture)
       }}
     >
-      <option value="" disabled>
-        Load fixture...
-      </option>
+      {selected === CUSTOM && (
+        <option value={CUSTOM} disabled>
+          Custom
+        </option>
+      )}
       {categories.map((cat) => (
         <optgroup key={cat} label={cat}>
           {fixtures
